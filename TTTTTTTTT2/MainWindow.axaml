@@ -52,24 +52,43 @@
 					Margin="25 40 5 90"
 					Background="Silver">
 
-				<ListBox CornerRadius="0"
-						 BorderThickness="0"
-						 BorderBrush="Black"
-						 Background="Silver"
-						 Margin="40 30 5 10"
-						 Name="ListBox_Structurer">
-					<ListBox.ItemTemplate>
-						<DataTemplate>
-							<Border>
-								<Grid ShowGridLines="True"
-									  ColumnDefinitions="100,100,100"
-									  RowDefinitions="100,100,100">
+				<StackPanel HorizontalAlignment="Center"
+							VerticalAlignment="Top"
+							Margin="0 20 0 0">
 
-								</Grid>
-							</Border>
-						</DataTemplate>
-					</ListBox.ItemTemplate>
-				</ListBox>
+					<Button BorderThickness="1"
+							Background="Green"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Height="55"
+							Width="300">
+						
+						<TextBlock Text="Дороги России"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+					<DockPanel>
+
+						<Line StartPoint="0, 0"
+							  EndPoint="18, 45"
+							  Stroke="Red"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"/>
+
+						<Line StartPoint="380, 45"
+							  EndPoint="200, 0"
+							  Stroke="Red"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"/>
+						
+					</DockPanel>
+					
+				</StackPanel>
+
+
+
 			</Border>
 
 			<Border Grid.Column="1"

@@ -166,3 +166,4 @@ C:\Users\prdb\Desktop\Avelonia projects (EK)\TTTTTTTTT2\TTTTTTTTT2\bin\Debug\net
 C:\Users\prdb\Desktop\Avelonia projects (EK)\TTTTTTTTT2\TTTTTTTTT2\obj\Debug\net8.0\Avalonia\TTTTTTTTT2.dll
 C:\Users\prdb\Desktop\Avelonia projects (EK)\TTTTTTTTT2\TTTTTTTTT2\obj\Debug\net8.0\Avalonia\TTTTTTTTT2.pdb
 C:\Users\prdb\Desktop\Avelonia projects (EK)\TTTTTTTTT2\TTTTTTTTT2\obj\Debug\net8.0\refint\Avalonia\TTTTTTTTT2.dll
+C:\Users\prdb\Desktop\Avelonia projects (EK)\TTTTTTTTT2\TTTTTTTTT2\obj\Debug\net8.0\TTTTTTTTT2.sourcelink.json

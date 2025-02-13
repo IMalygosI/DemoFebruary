@@ -30,7 +30,6 @@ public partial class RedactAndDobav : Window
         Title = dobav;
         Save.IsVisible = true;
         RedAndDob.DataContext = employee1;
-
         ListBoxLoang();
     }
     public RedactAndDobav(string dobav)
@@ -72,6 +71,39 @@ public partial class RedactAndDobav : Window
 
     private void Button_Click_Save(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
+        if (employee1.Id != 0)
+        {
+            if (Job_Title_ComboBox.SelectedItem is JobTitle job) 
+            {
+                employee1.JobTitle = job.Id;
+            }
+            if (Structural_Separation_ComboBox.SelectedItem is StructuralSeparation structural)
+            {
+                employee1.StructuralSeparation = structural.Id;
+            }
+
+
+            if (Structural_Separation_ComboBox.SelectedItem is Employee employeeST)
+            {
+                employee1.SupervisorId = employeeST.Id;
+            }
+            if (Assistant_ID_ComboBox.SelectedItem is Employee employeeAS)
+            {
+                employee1.AssistantId = employeeAS.Id;
+            }
+
+            Helper.Base.Employees.Update(employee1);
+        }
+        else 
+        {
+
+
+
+            Helper.Base.Employees.Add(employee1);
+        }
+        Helper.Base.SaveChanges();
+        Close();
+
     }
     private void Button_Click_Out(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {

@@ -36,14 +36,6 @@ namespace TTTTTTTTT2
             Profil profil = new Profil(vib);
             profil.Show();
             Close();
-
-
-            /*
-            var vib = ListBox_Personal.SelectedItem as Employee;
-            string dobav = "Редактирование";
-            RedactAndDobav redactAndDobav = new RedactAndDobav(dobav, vib);
-            redactAndDobav.Show();
-            Close();*/
         }
     }
 }
