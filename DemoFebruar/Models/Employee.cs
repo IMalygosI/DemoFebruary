@@ -17,7 +17,7 @@ public partial class Employee
 
     public string? PersonalNumber { get; set; }
 
-    public string? Cabinet { get; set; }
+    public int? Cabinet { get; set; }
 
     public string? CorporateEmail { get; set; }
 
@@ -32,6 +32,8 @@ public partial class Employee
     public virtual ICollection<AbsenceCalendar> AbsenceCalendars { get; set; } = new List<AbsenceCalendar>();
 
     public virtual Employee? Assistant { get; set; }
+
+    public virtual Cabinet? CabinetNavigation { get; set; }
 
     public virtual ICollection<EventsCalendar> EventsCalendars { get; set; } = new List<EventsCalendar>();
 

@@ -18,6 +18,8 @@ public partial class DimaBaseContext : DbContext
 
     public virtual DbSet<AbsenceCalendar> AbsenceCalendars { get; set; }
 
+    public virtual DbSet<Cabinet> Cabinets { get; set; }
+
     public virtual DbSet<Candidate> Candidates { get; set; }
 
     public virtual DbSet<Division> Divisions { get; set; }
@@ -68,6 +70,20 @@ public partial class DimaBaseContext : DbContext
                 .HasForeignKey(d => d.EmployeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("absence_calendar_employees_fk");
+        });
+
+        modelBuilder.Entity<Cabinet>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("cabinet_pk");
+
+            entity.ToTable("cabinet", "public_31-01-2025");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.Cabinet1)
+                .HasColumnType("character varying")
+                .HasColumnName("cabinet");
         });
 
         modelBuilder.Entity<Candidate>(entity =>
@@ -121,7 +137,6 @@ public partial class DimaBaseContext : DbContext
                 .HasColumnName("ID");
             entity.Property(e => e.AssistantId).HasColumnName("Assistant_ID");
             entity.Property(e => e.BrightDay).HasColumnName("Bright_Day");
-            entity.Property(e => e.Cabinet).HasMaxLength(10);
             entity.Property(e => e.CorporateEmail)
                 .HasMaxLength(50)
                 .HasColumnName("Corporate_Email");
@@ -138,6 +153,10 @@ public partial class DimaBaseContext : DbContext
             entity.HasOne(d => d.Assistant).WithMany(p => p.InverseAssistant)
                 .HasForeignKey(d => d.AssistantId)
                 .HasConstraintName("employees_employees_fk");
+
+            entity.HasOne(d => d.CabinetNavigation).WithMany(p => p.Employees)
+                .HasForeignKey(d => d.Cabinet)
+                .HasConstraintName("employees_cabinet_fk");
 
             entity.HasOne(d => d.JobTitleNavigation).WithMany(p => p.Employees)
                 .HasForeignKey(d => d.JobTitle)

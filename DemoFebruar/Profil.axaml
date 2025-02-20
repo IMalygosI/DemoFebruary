@@ -10,16 +10,18 @@
         Title="Profil">
 	<Grid Background="Silver"
 		  Name="prof"
-		  ShowGridLines="True"
+		  ShowGridLines="False"
 		  ColumnDefinitions="*,*"
 		  RowDefinitions="*">
-
+		
 		<Border Grid.Column="0"
 				Grid.Row="0"
 				Background="White"
-				Margin="20">
+				Margin="20"
+				IsVisible="False"
+				Name="RedactProfil">
 
-			<Grid ShowGridLines="True"
+			<Grid ShowGridLines="False"
 				  RowDefinitions="12*,*">
 
 				<StackPanel Grid.Row="0"
@@ -28,7 +30,146 @@
 							VerticalAlignment="Top">
 
 					<DockPanel Margin="0 10 0 0">
-						<TextBlock Text="Fio: "
+						
+						<TextBlock Text="ФИО: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+						
+						<TextBox Margin="10 0 0 0"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding Fio}"/>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="День рождения: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBox Margin="20 0 0 0"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding BrightDay}"/>
+
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Телефон: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBox Margin="10 0 0 0"
+								   HorizontalAlignment="Right"
+								   VerticalAlignment="Center"
+								   Text="{Binding WorkPhone}"/>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Email: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBox Margin="10 0 0 0"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding CorporateEmail}"/>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Кабинет: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBox Margin="10 0 0 0"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding CabinetNavigation.Cabinet1}"/>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Структура: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBox Margin="20 0 0 0"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding StructuralSeparationNavigation.Name}"/>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Работа: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBox Margin="20 0 0 0"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding JobTitleNavigation.Name}"/>
+
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Supervisor: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+					</DockPanel>
+
+				</StackPanel>
+
+				<Button Margin="20"
+						Grid.Row="1"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						BorderThickness="1">
+					<TextBlock Text="Редактировать"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+				</Button>
+
+			</Grid>
+
+
+		</Border>
+
+
+		
+		
+		
+		
+		
+
+
+		<Border Grid.Column="0"
+				Grid.Row="0"
+				Background="White"
+				Margin="20"
+				IsVisible="True"
+				Name="Profill">
+
+			<Grid ShowGridLines="False"
+				  RowDefinitions="12*,*">
+
+				<StackPanel Grid.Row="0"
+							Margin="10"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top">
+
+					<DockPanel Margin="0 10 0 0">
+						<TextBlock Text="ФИО: "
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 						<TextBlock Margin="10 0 0 0"
@@ -36,9 +177,21 @@
 								   VerticalAlignment="Center"
 								   Text="{Binding Fio}"/>
 					</DockPanel>
-
+					
 					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Work Phone: "
+						<TextBlock Text="День рождения: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBlock Margin="20 0 0 0"
+								   HorizontalAlignment="Right"
+								   VerticalAlignment="Center"
+								   Text="{Binding BrightDay}"/>
+
+					</DockPanel>
+					
+					<DockPanel Margin="0 20 0 0">
+						<TextBlock Text="Телефон: "
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 						<TextBlock Margin="10 0 0 0"
@@ -48,17 +201,7 @@
 					</DockPanel>
 
 					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Personal Phone: "
-								   HorizontalAlignment="Left"
-								   VerticalAlignment="Center"/>
-						<TextBlock Margin="10 0 0 0"
-								 HorizontalAlignment="Right"
-								 VerticalAlignment="Center"
-								 Text="{Binding PersonalNumber}"/>
-					</DockPanel>
-
-					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Corporate Email: "
+						<TextBlock Text="Email: "
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 						<TextBlock Margin="10 0 0 0"
@@ -68,17 +211,17 @@
 					</DockPanel>
 
 					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Cabinet: "
+						<TextBlock Text="Кабинет: "
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 						<TextBlock Margin="10 0 0 0"
 								 HorizontalAlignment="Right"
 								 VerticalAlignment="Center"
-								 Text="{Binding Cabinet}"/>
+								 Text="{Binding CabinetNavigation.Cabinet1}"/>
 					</DockPanel>
 
 					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Structural Separation: "
+						<TextBlock Text="Структура: "
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
@@ -89,7 +232,7 @@
 					</DockPanel>
 
 					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Job Title: "
+						<TextBlock Text="Работа: "
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
@@ -97,19 +240,6 @@
 								   HorizontalAlignment="Right"
 								   VerticalAlignment="Center"
 								   Text="{Binding JobTitleNavigation.Name}"/>
-
-					</DockPanel>
-
-					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Assistant: "
-								   HorizontalAlignment="Left"
-								   VerticalAlignment="Center"/>
-
-						<TextBlock Margin="20 0 0 0"
-								   HorizontalAlignment="Right"
-								   VerticalAlignment="Center"
-								   Name="Assistant"
-								   Text="{Binding Assistant}"/>
 
 					</DockPanel>
 
@@ -125,23 +255,12 @@
 								   Text="{Binding Supervisor}"/>
 
 					</DockPanel>
-
-					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="BrightDay: "
-								   HorizontalAlignment="Left"
-								   VerticalAlignment="Center"/>
-
-						<TextBlock Margin="20 0 0 0"
-								   HorizontalAlignment="Right"
-								   VerticalAlignment="Center"
-								   Text="{Binding BrightDay}"/>
-
-					</DockPanel>
+					
 				</StackPanel>
 
 				<Button Margin="20"
-						Grid.Row="1"
 						Click="Button_Click_Redact"
+						Grid.Row="1"
 						HorizontalAlignment="Left"
 						VerticalAlignment="Top"
 						BorderThickness="1">
@@ -160,7 +279,7 @@
 				Background="White"
 				Margin="20">
 
-			<Grid ShowGridLines="True"
+			<Grid ShowGridLines="False"
 				  ColumnDefinitions="*"
 				  RowDefinitions="*,11*,*">
 
@@ -205,7 +324,7 @@
 					<TextBlock Text="Обучения"
 						   Grid.Row="1"/>
 
-					<Grid ShowGridLines="True"
+					<Grid ShowGridLines="False"
 						  ColumnDefinitions="*"
 						  RowDefinitions="*"
 						  Margin="0 5 0 0">
@@ -227,7 +346,11 @@
 						</ListBox>
 					</Grid>
 
-					<Grid ShowGridLines="True"
+					<TextBlock Text="Командировки"
+							   Margin="0 10 0 0"
+							   Grid.Row="1"/>
+					
+					<Grid ShowGridLines="False"
 						  ColumnDefinitions="*"
 						  RowDefinitions="*"
 						  Margin="0 10 0 0">
@@ -253,7 +376,7 @@
 							   Grid.Row="1"
 							   Margin="0 10 5 0"/>
 
-					<Grid ShowGridLines="True"
+					<Grid ShowGridLines="False"
 						  ColumnDefinitions="*"
 						  RowDefinitions="*"
 						  Margin="0 5 0 0">
@@ -279,6 +402,28 @@
 							   Grid.Row="1"
 							   Margin="0 10 5 0"/>
 
+					<Grid ShowGridLines="False"
+						  ColumnDefinitions="*"
+						  RowDefinitions="*"
+						  Margin="0 5 0 0">
+						<ListBox Background="Silver"
+								 Height="50"
+								 VerticalAlignment="Top"
+								 Grid.Row="1">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Border>
+										<Grid ShowGridLines="True"
+											  ColumnDefinitions="*,*"
+											  RowDefinitions="*,*">
+
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+					</Grid>
+
 				</StackPanel>
 
 				<Button Margin="20"
@@ -295,6 +440,5 @@
 				</Button>
 			</Grid>
 		</Border>
-
 	</Grid>
 </Window>

@@ -1,7 +1,6 @@
 using Avalonia.Controls;
 using DemoFebruar.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,104 +8,349 @@ namespace DemoFebruar
 {
     public partial class MainWindow : Window
     {
-        List<Employee> employees = new List<Employee>();
-        int VariantDep = 0;
-        int DopOtdel = 0;
+        private List<Employee> employees;    // Отфильтрованные сотрудники
+        private int VariantDep = 0;
+        private int Deportament = 0;
+
         public MainWindow()
         {
             InitializeComponent();
-            LoadEmployees();
+            LoadEmployees(); // Загружаем сотрудников при запуске
         }
 
-        /// <summary>
-        /// Загрузка данных
-        /// </summary>
-        public void LoadEmployees()
+        private void LoadEmployees()
         {
-            // Загрузка всех сотрудников
             employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation)
-                                             .Include(a => a.StructuralSeparationNavigation).ToList();
+                                             .Include(a => a.CabinetNavigation)
+                                             .Include(a => a.StructuralSeparationNavigation)
+                                             .ThenInclude(ss => ss.Divisions)
+                                             .ThenInclude(d => d.IdPototdelNavigation).ToList();
 
-            if (DopOtdel == 0)
+            if (Deportament == 0)
             {
-                AdministrativeDepartament.IsVisible = false; //  Для сотрудников из Отдела Администрации.
-                VseDepartament.IsVisible = true; // для всех сотрудников
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                AdministrativeDepartament.IsVisible = false;
+                VseDepartament.IsVisible = true;
 
-                employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation)
-                                             .Include(a => a.StructuralSeparationNavigation).ToList();
+                // Показываем всех сотрудников
+                employees = employees.ToList();
             }
-            if (DopOtdel == 1)
+            else if (Deportament == 1)
             {
-                VseDepartament.IsVisible = false; // для всех сотрудников
-                AdministrativeDepartament.IsVisible = true; //  Для сотрудников из Отдела Администрации. 
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = true; // Для сотрудников из Отдела Администрации.
 
-                if (VariantDep == 1) 
+                if (VariantDep != 0)
                 {
-                    var element = employees.Where(e => e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
-
-                    //employees = employees.Select(g =>g.StructuralSeparation = element).ToList();
-
-                }
-                else if (VariantDep == 2)
-                {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
                 }
             }
-
-            /*
-            if (DopOtdel == 2)
+            else if (Deportament == 2)
             {
-                VseDepartament.IsVisible = false; // для всех сотрудников
-                AdministrativeDepartament.IsVisible = true; //  Для сотрудников из Отдела Администрации. 
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = true;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
 
-                if (VariantDep == 1)
+                if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
-                }
-                else if (VariantDep == 2)
-                {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
                 }
             }
-            */
+            else if (Deportament == 3)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = true;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 4)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = true;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 5)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = true;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 6)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = true;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 7)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = true;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 8)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = true;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 9)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = true;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 10)
+            {
+                UpravlenFinansamiDepartament.IsVisible = true;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 11)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = false;
+                KaznaDepartament.IsVisible = true;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
+            else if (Deportament == 12)
+            {
+                UpravlenFinansamiDepartament.IsVisible = false;
+                UpravObespDepartament.IsVisible = true;
+                KaznaDepartament.IsVisible = false;
+                AnaliticDepartament.IsVisible = false;
+                WorkPromDepartament.IsVisible = false;
+                WorkPersonalDepartament.IsVisible = false;
+                CorrporatDepartament.IsVisible = false;
+                MarcetingDepartament.IsVisible = false;
+                CommunicatorDepartament.IsVisible = false;
+                ApparatUpravlenDepartament.IsVisible = false;
+                AcademicDorogiDepartament.IsVisible = false;
+                VseDepartament.IsVisible = false; // Для всех сотрудников
+                AdministrativeDepartament.IsVisible = false; // Для сотрудников из Отдела Администрации.
+
+                if (VariantDep != 0)
+                {
+                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
+                  e.StructuralSeparationNavigation.Divisions != null &&
+                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                }
+            }
 
             ListBox_Personal.ItemsSource = employees;
         }
 
         /// <summary>
-        /// Сортировка сотрудников по депортаментам ! ПОПРАВИТЬ ПОЛЕ ДОБАВЛЕНИЯ ПОДОТДЕЛОВ
+        /// Сортировка сотрудников по депортаментам
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Button_Click_Department(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             if (sender is Button button && int.TryParse(button.Tag.ToString(), out int departmentId))
             {
                 VariantDep = departmentId;
-                LoadEmployees(); // Загружаем сотрудников для выбранного отдела
+                LoadEmployees(); // Применяем фильтрацию
             }
         }
 
         /// <summary>
         /// Обновляем после выбора нужный отдел и под отдел
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Button_Click_DepartmentSort(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            VariantDep = 0;
             if (sender is Button button && int.TryParse(button.Tag.ToString(), out int departmentId))
             {
-                DopOtdel = departmentId;
-                LoadEmployees();
+                Deportament = departmentId;
+                LoadEmployees(); // Применяем фильтрацию
             }
         }
 
         /// <summary>
         /// Добавление
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Button_Click_Dob(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             string dobav = "Добавление";
@@ -118,8 +362,6 @@ namespace DemoFebruar
         /// <summary>
         /// Открытие профиля
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ListBox_DoubleTapped_Redact(object? sender, Avalonia.Input.TappedEventArgs e)
         {
             var vib = ListBox_Personal.SelectedItem as Employee;
@@ -128,6 +370,5 @@ namespace DemoFebruar
             profil.Show();
             Close();
         }
-
     }
 }
