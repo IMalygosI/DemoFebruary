@@ -1,0 +1,214 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		x:CompileBindings="False"
+        x:Class="DemoFebruar.RedactAndDobav"
+        Title="Редактирование или добавление">
+
+	<Grid ShowGridLines="False"
+		  Name="RedAndDob"
+		  ColumnDefinitions="*,*,*"
+		  RowDefinitions="*,6*,*">
+
+		<StackPanel Grid.Column="1"
+					Grid.Row="1"
+					Margin="10"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center">
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="ФИО: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+				<TextBox Margin="10 0 0 0"
+						 HorizontalAlignment="Right"
+						 VerticalAlignment="Center"
+						 Height="33"
+						 Width="250"
+						 Name="FIO"
+						 Text="{Binding Fio}"
+						 Watermark="ФИО"/>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="Work Phone: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+				<TextBox Margin="10 0 0 0"
+						 HorizontalAlignment="Right"
+						 VerticalAlignment="Center"
+						 Height="33"
+						 Width="250"
+						 Name="WorkPhone"
+						 Text="{Binding WorkPhone}"
+						 Watermark="Work Phone"/>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="Personal Phone: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+				<TextBox Margin="10 0 0 0"
+						 HorizontalAlignment="Right"
+						 VerticalAlignment="Center"
+						 Height="33"
+						 Width="250"
+						 Name="PersonalPhone"
+						 Text="{Binding PersonalNumber}"
+						 Watermark="Personal Phone"/>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="Corporate Email: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+				<TextBox Margin="10 0 0 0"
+						 HorizontalAlignment="Right"
+						 VerticalAlignment="Center"
+						 Height="33"
+						 Width="250"
+						 Name="CorporateEmail"
+						 Text="{Binding CorporateEmail}"
+						 Watermark="Corporate Email"/>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="Cabinet: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+				<TextBox Margin="10 0 0 0"
+						 HorizontalAlignment="Right"
+						 VerticalAlignment="Center"
+						 Height="33"
+						 Width="250"
+						 Text="{Binding Cabinet}"
+						 Watermark="Cabinet"/>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="Structural Separation: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+
+				<ComboBox Name="Structural_Separation_ComboBox"
+						  HorizontalAlignment="Right"
+						  VerticalAlignment="Center"
+						  Height="33"
+						  Width="250">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="Job Title: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+
+				<ComboBox Name="Job_Title_ComboBox"
+						  HorizontalAlignment="Right"
+						  VerticalAlignment="Center"
+						  Height="33"
+						  Width="250">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="Assistant: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+
+				<ComboBox Name="Assistant_ID_ComboBox"
+						  HorizontalAlignment="Right"
+						  VerticalAlignment="Center"
+						  Height="33"
+						  Width="250">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding AssistantID}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="Supervisor: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+
+				<ComboBox Name="Supervisor_ID_ComboBox"
+						  HorizontalAlignment="Right"
+						  VerticalAlignment="Center"
+						  Height="33"
+						  Width="250">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding SupervisorId}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</DockPanel>
+
+			<DockPanel Margin="0 10 0 0">
+				<TextBlock Text="BrightDay: "
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center"/>
+
+				<CalendarDatePicker Name="CalendarsBrightDay"
+									Text="{Binding CalendarsBrightDay}"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Center"
+									Width="250"/>
+
+			</DockPanel>
+		</StackPanel>
+
+		<StackPanel Grid.Column="2"
+					Grid.Row="1"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center">
+
+			<TextBlock Text="Info:"
+					   Margin="0 0 0 5"/>
+
+			<TextBox Watermark="Info"
+					 VerticalAlignment="Center"
+					 HorizontalAlignment="Center"
+					 Width="400"
+					 Height="400"
+					 Name="Inform"
+					 Text="{Binding Info}"/>
+		</StackPanel>
+
+
+		<DockPanel Grid.Column="2"
+				   Grid.Row="0"
+				   Margin="10"
+				   VerticalAlignment="Top"
+				   HorizontalAlignment="Right">
+			<Button Name="Save"
+					Click="Button_Click_Save"
+					IsVisible="False">
+				<TextBlock Text="Сохранить"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+			</Button>
+			<Button Margin="10 0 0 0"
+					Click="Button_Click_Out">
+				<TextBlock Text="Назад"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+			</Button>
+		</DockPanel>
+	</Grid>
+</Window>
