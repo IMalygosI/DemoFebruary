@@ -168,6 +168,8 @@
 					</Button>
 
 					<Button Click="Button_Click_Otmen"
+							Name="Otmena"
+							IsVisible="True"
 							Background="Gray"
 							BorderBrush="Aqua"
 							Margin="10 0 0 0"
@@ -270,7 +272,7 @@
 						<TextBlock Margin="20 0 0 0"
 								   HorizontalAlignment="Right"
 								   VerticalAlignment="Center"
-								   Text="{Binding StructuralSeparationNavigation.Name}"/>
+								   Text="{Binding Dannue}"/>
 					</DockPanel>
 
 					<DockPanel Margin="0 20 0 0">

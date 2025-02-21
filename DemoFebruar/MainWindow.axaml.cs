@@ -18,6 +18,9 @@ namespace DemoFebruar
             LoadEmployees(); // «агружаем сотрудников при запуске
         }
 
+        /// <summary>
+        /// «агрузка и обновление данных (сортировка и поиск)
+        /// </summary>
         private void LoadEmployees()
         {
             employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation)
@@ -62,9 +65,7 @@ namespace DemoFebruar
                 if (VariantDep != 0)
                 {
 
-                    employees = employees.Where(x => x.IdOtdels.Any(x=>x.Id == VariantDep)).ToList();                
-
-
+                    employees = employees.Where(x => x.IdOtdels.Any(x=>x.Id == VariantDep)).ToList();  
 
                 }
             }

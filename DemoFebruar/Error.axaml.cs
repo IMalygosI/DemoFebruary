@@ -10,6 +10,11 @@ public partial class Error : Window
     {
         InitializeComponent();
     }
+
+    /// <summary>
+    /// Загрузка ошибок
+    /// </summary>
+    /// <param name="Warning"></param>
     public Error(string Warning)
     {
         InitializeComponent();
@@ -41,6 +46,11 @@ public partial class Error : Window
 
     }
 
+    /// <summary>
+    /// Выход
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         Close();

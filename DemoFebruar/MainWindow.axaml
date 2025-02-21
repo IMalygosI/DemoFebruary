@@ -2231,7 +2231,7 @@
 												   HorizontalAlignment="Left"
 												   VerticalAlignment="Center"
 												   Margin="10 0 0 0">
-											<TextBlock Text="{Binding StructuralSeparationNavigation.Name}"/>
+											<TextBlock Text="{Binding Dannue}"/>
 											<TextBlock Text=" - "/>
 											<TextBlock Text="{Binding JobTitleNavigation.Name}"
 													   Margin="10 0 0 0"/>
