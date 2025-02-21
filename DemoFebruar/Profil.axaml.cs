@@ -21,7 +21,7 @@ public partial class Profil : Window
     List<StructuralSeparation> structuralSeparation = new List<StructuralSeparation>();
 
     public Profil()
-    {
+    {fafasdfa
         InitializeComponent();
         employee1 = new Employee();
         Uvolit.IsVisible = false;
