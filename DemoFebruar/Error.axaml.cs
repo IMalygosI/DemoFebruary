@@ -18,6 +18,26 @@ public partial class Error : Window
         {
             ErrorsWarning.Text = Warning;
         }
+        if (Warning == "Ошибка! Выберите Структуру!")
+        {
+            ErrorsWarning.Text = Warning;
+        }
+        if (Warning == "Ошибка! Выберите работу!")
+        {
+            ErrorsWarning.Text = Warning;
+        }
+        if (Warning == "Ошибка! Введите телефон!")
+        {
+            ErrorsWarning.Text = Warning;
+        }
+        if (Warning == "Ошибка! Выберите кабинет!")
+        {
+            ErrorsWarning.Text = Warning;
+        }
+        if (Warning == "Ошибка! Введите день рождения!")
+        {
+            ErrorsWarning.Text = Warning;
+        }
 
     }
 

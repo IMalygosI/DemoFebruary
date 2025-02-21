@@ -64,8 +64,8 @@ namespace DemoFebruar
                 if (VariantDep != 0)
                 {
                     employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+                                                     e.StructuralSeparationNavigation.Divisions != null &&
+                                                     e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
                 }
             }
             else if (Deportament == 2)
@@ -353,8 +353,7 @@ namespace DemoFebruar
         /// </summary>
         private void Button_Click_Dob(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            string dobav = "Добавление";
-            RedactAndDobav redactAndDobav = new RedactAndDobav(dobav);
+            Profil redactAndDobav = new Profil();
             redactAndDobav.Show();
             Close();
         }

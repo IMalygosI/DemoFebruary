@@ -36,6 +36,8 @@
 								   VerticalAlignment="Center"/>
 						
 						<TextBox Margin="10 0 0 0"
+								 Width="250"
+								 Name="FIO"
 								 HorizontalAlignment="Right"
 								 VerticalAlignment="Center"
 								 Text="{Binding Fio}"/>
@@ -48,10 +50,13 @@
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
-						<TextBox Margin="20 0 0 0"
-								 HorizontalAlignment="Right"
-								 VerticalAlignment="Center"
-								 Text="{Binding BrightDay}"/>
+						<CalendarDatePicker Name="BrightDayBox"
+											Margin="20 0 0 0"
+											Padding="10 1"
+											HorizontalAlignment="Right"
+											VerticalAlignment="Center"
+											Watermark="Дата рождения"
+											SelectedDate="{Binding BrightDay}"/>
 
 					</DockPanel>
 
@@ -61,10 +66,13 @@
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
-						<TextBox Margin="10 0 0 0"
-								   HorizontalAlignment="Right"
-								   VerticalAlignment="Center"
-								   Text="{Binding WorkPhone}"/>
+						<MaskedTextBox Name="phoneMaskedTextBox"
+									   Margin="10 0 0 0"
+									   HorizontalAlignment="Right"
+									   VerticalAlignment="Center"
+									   Width="160"
+									   Mask="+7 (999) 999-99-99"
+									   Text="{Binding WorkPhone}"/>
 						
 					</DockPanel>
 
@@ -75,6 +83,8 @@
 								   VerticalAlignment="Center"/>
 
 						<TextBox Margin="10 0 0 0"
+								 Width="250"
+								 Name="corporateEmail"
 								 HorizontalAlignment="Right"
 								 VerticalAlignment="Center"
 								 Text="{Binding CorporateEmail}"/>
@@ -87,10 +97,18 @@
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
-						<TextBox Margin="10 0 0 0"
-								 HorizontalAlignment="Right"
-								 VerticalAlignment="Center"
-								 Text="{Binding CabinetNavigation.Cabinet1}"/>
+						<ComboBox Margin="20 0 0 0"
+								  Height="33"
+								  Width="400"
+								  Name="Cabinetss"
+								  HorizontalAlignment="Right"
+								  VerticalAlignment="Center">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Cabinet1}"/>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
 						
 					</DockPanel>
 
@@ -100,10 +118,18 @@
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
-						<TextBox Margin="20 0 0 0"
-								 HorizontalAlignment="Right"
-								 VerticalAlignment="Center"
-								 Text="{Binding StructuralSeparationNavigation.Name}"/>
+						<ComboBox Margin="20 0 0 0"
+								  Height="33"
+								  Width="400"
+								  Name="structuralseparationS"
+								  HorizontalAlignment="Right"
+								  VerticalAlignment="Center">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}"/>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
 						
 					</DockPanel>
 
@@ -113,10 +139,18 @@
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
-						<TextBox Margin="20 0 0 0"
-								 HorizontalAlignment="Right"
-								 VerticalAlignment="Center"
-								 Text="{Binding JobTitleNavigation.Name}"/>
+						<ComboBox Margin="20 0 0 0"
+								  Height="33"
+								  Width="400"
+								  Name="Jobs"
+								  HorizontalAlignment="Right"
+								  VerticalAlignment="Center">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}"/>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
 
 					</DockPanel>
 
@@ -126,23 +160,61 @@
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
+						<ComboBox Margin="20 0 0 0"
+								  Name="pototdel"
+								  HorizontalAlignment="Right"
+								  VerticalAlignment="Center">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}"/>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+
 					</DockPanel>
 
 				</StackPanel>
 
-				<Button Margin="20"
-						Grid.Row="1"
-						HorizontalAlignment="Left"
-						VerticalAlignment="Top"
-						BorderThickness="1">
-					<TextBlock Text="Редактировать"
-							   HorizontalAlignment="Center"
-							   VerticalAlignment="Center"/>
-				</Button>
+				<DockPanel Margin="20"
+						   Grid.Row="1"
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Top">
+
+					<Button Click="Button_Click_Save"
+							Background="Green"
+							BorderBrush="Aqua"
+							BorderThickness="2">
+						<TextBlock Text="Сохранить"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+					<Button Click="Button_Click_Otmen"
+							Background="Gray"
+							BorderBrush="Aqua"
+							Margin="10 0 0 0"
+							BorderThickness="2">
+						<TextBlock Text="Отмена"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+					<Button Click="Button_Click_Udlit"
+							Background="Red"
+							BorderBrush="Aqua"
+							Margin="10 0 0 0"
+							BorderThickness="2">
+						<TextBlock Text="Уволить"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+				</DockPanel>
 
 			</Grid>
-
-
 		</Border>
 
 
@@ -176,6 +248,7 @@
 								   HorizontalAlignment="Right"
 								   VerticalAlignment="Center"
 								   Text="{Binding Fio}"/>
+
 					</DockPanel>
 					
 					<DockPanel Margin="0 20 0 0">
@@ -244,7 +317,7 @@
 					</DockPanel>
 
 					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Supervisor: "
+						<TextBlock Text="Подотдел: "
 								   HorizontalAlignment="Left"
 								   VerticalAlignment="Center"/>
 
@@ -260,11 +333,14 @@
 
 				<Button Margin="20"
 						Click="Button_Click_Redact"
+						Background="Green"
+						BorderBrush="Aqua"
 						Grid.Row="1"
 						HorizontalAlignment="Left"
 						VerticalAlignment="Top"
-						BorderThickness="1">
+						BorderThickness="2">
 					<TextBlock Text="Редактировать"
+							   Foreground="White"
 							   HorizontalAlignment="Center"
 							   VerticalAlignment="Center"/>
 				</Button>
@@ -290,9 +366,11 @@
 					<Button Margin="20 0 0 0"
 							Height="33"
 							Width="110"
+							BorderBrush="Gray"
 							BorderThickness="1"
 							Background="Green">
 						<TextBlock Text="Прошедшие"
+								   Foreground="White"
 								   HorizontalAlignment="Center"
 								   VerticalAlignment="Center"/>
 					</Button>
@@ -300,9 +378,11 @@
 					<Button Margin="5 0 0 0"
 							Height="33"
 							Width="110"
+							BorderBrush="Gray"
 							BorderThickness="1"
 							Background="Green">
 						<TextBlock Text="Текущие"
+								   Foreground="White"
 								   HorizontalAlignment="Center"
 								   VerticalAlignment="Center"/>
 					</Button>
@@ -310,9 +390,11 @@
 					<Button Margin="5 0 0 0"
 							Height="33"
 							Width="110"
+							BorderBrush="Gray"
 							BorderThickness="1"
 							Background="Green">
 						<TextBlock Text="Будущие"
+								   Foreground="White"
 								   HorizontalAlignment="Center"
 								   VerticalAlignment="Center"/>
 					</Button>
@@ -432,6 +514,7 @@
 						VerticalAlignment="Center"
 						BorderThickness="1"
 						Background="Red"
+						BorderBrush="Aqua"
 						Grid.Row="2">
 					<TextBlock Text="Выйти"
 							   Foreground="White"
