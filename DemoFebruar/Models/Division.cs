@@ -7,11 +7,11 @@ public partial class Division
 {
     public int Id { get; set; }
 
-    public int IdPototdel { get; set; }
+    public string? Name { get; set; }
 
-    public int IdStructuralSeparation { get; set; }
+    public virtual ICollection<Division> IdDivisionOtdels { get; set; } = new List<Division>();
 
-    public virtual PotOtdel IdPototdelNavigation { get; set; } = null!;
+    public virtual ICollection<Division> IdDivisionPotOtdels { get; set; } = new List<Division>();
 
-    public virtual StructuralSeparation IdStructuralSeparationNavigation { get; set; } = null!;
+    public virtual ICollection<Employee> IdEmployes { get; set; } = new List<Employee>();
 }

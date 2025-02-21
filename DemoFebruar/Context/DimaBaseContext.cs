@@ -18,6 +18,8 @@ public partial class DimaBaseContext : DbContext
 
     public virtual DbSet<AbsenceCalendar> AbsenceCalendars { get; set; }
 
+    public virtual DbSet<AssistantId> AssistantIds { get; set; }
+
     public virtual DbSet<Cabinet> Cabinets { get; set; }
 
     public virtual DbSet<Candidate> Candidates { get; set; }
@@ -36,11 +38,7 @@ public partial class DimaBaseContext : DbContext
 
     public virtual DbSet<MaterialAssociation> MaterialAssociations { get; set; }
 
-    public virtual DbSet<PotOtdel> PotOtdels { get; set; }
-
-    public virtual DbSet<StructuralSeparation> StructuralSeparations { get; set; }
-
-    public virtual DbSet<Subdivision> Subdivisions { get; set; }
+    public virtual DbSet<SupervisorId> SupervisorIds { get; set; }
 
     public virtual DbSet<TraningAttendance> TraningAttendances { get; set; }
 
@@ -70,6 +68,23 @@ public partial class DimaBaseContext : DbContext
                 .HasForeignKey(d => d.EmployeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("absence_calendar_employees_fk");
+        });
+
+        modelBuilder.Entity<AssistantId>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("assistant_id_pk");
+
+            entity.ToTable("Assistant_ID", "public_31-01-2025");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.IdEmployes).HasColumnName("id_employes");
+
+            entity.HasOne(d => d.IdEmployesNavigation).WithMany(p => p.AssistantIds)
+                .HasForeignKey(d => d.IdEmployes)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("assistant_id_employees_fk");
         });
 
         modelBuilder.Entity<Cabinet>(entity =>
@@ -107,23 +122,52 @@ public partial class DimaBaseContext : DbContext
 
         modelBuilder.Entity<Division>(entity =>
         {
-            entity.HasKey(e => new { e.Id, e.IdPototdel, e.IdStructuralSeparation }).HasName("division_pk");
+            entity.HasKey(e => e.Id).HasName("division_pk");
 
             entity.ToTable("division", "public_31-01-2025");
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.IdPototdel).HasColumnName("id_pototdel");
-            entity.Property(e => e.IdStructuralSeparation).HasColumnName("id_structural_separation");
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("ID");
+            entity.Property(e => e.Name).HasColumnType("character varying");
 
-            entity.HasOne(d => d.IdPototdelNavigation).WithMany(p => p.Divisions)
-                .HasForeignKey(d => d.IdPototdel)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("division_pototdel_fk");
+            entity.HasMany(d => d.IdDivisionOtdels).WithMany(p => p.IdDivisionPotOtdels)
+                .UsingEntity<Dictionary<string, object>>(
+                    "PotOtdel",
+                    r => r.HasOne<Division>().WithMany()
+                        .HasForeignKey("IdDivisionOtdel")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("pototdel_division_fk"),
+                    l => l.HasOne<Division>().WithMany()
+                        .HasForeignKey("IdDivisionPotOtdel")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("pototdel_division_fk_1"),
+                    j =>
+                    {
+                        j.HasKey("IdDivisionOtdel", "IdDivisionPotOtdel").HasName("pototdel_pk");
+                        j.ToTable("PotOtdel", "public_31-01-2025");
+                        j.IndexerProperty<int>("IdDivisionOtdel").HasColumnName("ID_Division_Otdel");
+                        j.IndexerProperty<int>("IdDivisionPotOtdel").HasColumnName("ID_Division_PotOtdel");
+                    });
 
-            entity.HasOne(d => d.IdStructuralSeparationNavigation).WithMany(p => p.Divisions)
-                .HasForeignKey(d => d.IdStructuralSeparation)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("division_structural_separation_fk");
+            entity.HasMany(d => d.IdDivisionPotOtdels).WithMany(p => p.IdDivisionOtdels)
+                .UsingEntity<Dictionary<string, object>>(
+                    "PotOtdel",
+                    r => r.HasOne<Division>().WithMany()
+                        .HasForeignKey("IdDivisionPotOtdel")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("pototdel_division_fk_1"),
+                    l => l.HasOne<Division>().WithMany()
+                        .HasForeignKey("IdDivisionOtdel")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("pototdel_division_fk"),
+                    j =>
+                    {
+                        j.HasKey("IdDivisionOtdel", "IdDivisionPotOtdel").HasName("pototdel_pk");
+                        j.ToTable("PotOtdel", "public_31-01-2025");
+                        j.IndexerProperty<int>("IdDivisionOtdel").HasColumnName("ID_Division_Otdel");
+                        j.IndexerProperty<int>("IdDivisionPotOtdel").HasColumnName("ID_Division_PotOtdel");
+                    });
         });
 
         modelBuilder.Entity<Employee>(entity =>
@@ -146,13 +190,8 @@ public partial class DimaBaseContext : DbContext
             entity.Property(e => e.Info).HasColumnType("character varying");
             entity.Property(e => e.JobTitle).HasColumnName("Job_Title");
             entity.Property(e => e.PersonalNumber).HasColumnName("Personal_Number");
-            entity.Property(e => e.StructuralSeparation).HasColumnName("Structural_Separation");
             entity.Property(e => e.SupervisorId).HasColumnName("Supervisor_ID");
             entity.Property(e => e.WorkPhone).HasColumnName("Work_Phone");
-
-            entity.HasOne(d => d.Assistant).WithMany(p => p.InverseAssistant)
-                .HasForeignKey(d => d.AssistantId)
-                .HasConstraintName("employees_employees_fk");
 
             entity.HasOne(d => d.CabinetNavigation).WithMany(p => p.Employees)
                 .HasForeignKey(d => d.Cabinet)
@@ -164,14 +203,24 @@ public partial class DimaBaseContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("employees_job_title_fk");
 
-            entity.HasOne(d => d.StructuralSeparationNavigation).WithMany(p => p.Employees)
-                .HasForeignKey(d => d.StructuralSeparation)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("employees_structural_separation_fk");
-
-            entity.HasOne(d => d.Supervisor).WithMany(p => p.InverseSupervisor)
-                .HasForeignKey(d => d.SupervisorId)
-                .HasConstraintName("employees_employees_fk_1");
+            entity.HasMany(d => d.IdOtdels).WithMany(p => p.IdEmployes)
+                .UsingEntity<Dictionary<string, object>>(
+                    "StructuralSeparation",
+                    r => r.HasOne<Division>().WithMany()
+                        .HasForeignKey("IdOtdel")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("structural_separation_division_fk"),
+                    l => l.HasOne<Employee>().WithMany()
+                        .HasForeignKey("IdEmployes")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("structural_separation_employees_fk"),
+                    j =>
+                    {
+                        j.HasKey("IdEmployes", "IdOtdel").HasName("structural_separation_pk");
+                        j.ToTable("Structural_Separation", "public_31-01-2025");
+                        j.IndexerProperty<int>("IdEmployes").HasColumnName("id_employes");
+                        j.IndexerProperty<int>("IdOtdel").HasColumnName("id_otdel");
+                    });
         });
 
         modelBuilder.Entity<EventsCalendar>(entity =>
@@ -280,49 +329,21 @@ public partial class DimaBaseContext : DbContext
                 .HasConstraintName("material_association_traning_calendar_fk");
         });
 
-        modelBuilder.Entity<PotOtdel>(entity =>
+        modelBuilder.Entity<SupervisorId>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("pototdel_pk");
+            entity.HasKey(e => e.Id).HasName("supervisor_id_pk");
 
-            entity.ToTable("PotOtdel", "public_31-01-2025");
+            entity.ToTable("Supervisor_ID", "public_31-01-2025");
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("ID");
-            entity.Property(e => e.Name).HasColumnType("character varying");
-        });
+            entity.Property(e => e.IdEmployes).HasColumnName("ID_Employes");
 
-        modelBuilder.Entity<StructuralSeparation>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("structural_separation_pk");
-
-            entity.ToTable("Structural_Separation", "public_31-01-2025");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.Description).HasMaxLength(1000);
-            entity.Property(e => e.Name).HasMaxLength(100);
-        });
-
-        modelBuilder.Entity<Subdivision>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("subdivisions_pk");
-
-            entity.ToTable("Subdivisions", "public_31-01-2025");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.StructuralSeparationId).HasColumnName("Structural_Separation_ID");
-            entity.Property(e => e.SubdivisionsName)
-                .HasColumnType("character varying")
-                .HasColumnName("Subdivisions_Name");
-
-            entity.HasOne(d => d.StructuralSeparation).WithMany(p => p.Subdivisions)
-                .HasForeignKey(d => d.StructuralSeparationId)
+            entity.HasOne(d => d.IdEmployesNavigation).WithMany(p => p.SupervisorIds)
+                .HasForeignKey(d => d.IdEmployes)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("subdivisions_structural_separation_fk");
+                .HasConstraintName("supervisor_id_employees_fk");
         });
 
         modelBuilder.Entity<TraningAttendance>(entity =>

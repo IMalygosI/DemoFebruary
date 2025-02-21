@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\demofebruary\\demofebruar\\profil.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\profil.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\demofebruary\\demofebruar\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\demofebruary\\demofebruar\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\demofebruary\\demofebruar\\profil.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\profil.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\demofebruary\\demofebruar\\profil.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\profil.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\demofebruary\\demofebruar\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,50 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "DemoFebruar\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\Models\\Employee.cs",
+              "RelativeToolTip": "DemoFebruar\\Models\\Employee.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAUwDAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T10:20:30.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "MainWindow.axaml.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\MainWindow.axaml.cs",
               "RelativeDocumentMoniker": "DemoFebruar\\MainWindow.axaml.cs",
               "ToolTip": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\MainWindow.axaml.cs",
               "RelativeToolTip": "DemoFebruar\\MainWindow.axaml.cs",
-              "ViewState": "AgIAAO0AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD4BAAAAAAAAAAAwwEIBAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T08:19:53.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\MainWindow.axaml",
-              "RelativeDocumentMoniker": "DemoFebruar\\MainWindow.axaml",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\MainWindow.axaml",
-              "RelativeToolTip": "DemoFebruar\\MainWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-21T08:19:53.487Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Profil.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\Profil.axaml.cs",
-              "RelativeDocumentMoniker": "DemoFebruar\\Profil.axaml.cs",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\Profil.axaml.cs",
-              "RelativeToolTip": "DemoFebruar\\Profil.axaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T08:19:51.077Z",
+              "WhenOpened": "2025-02-21T09:36:25.707Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Profil.axaml",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\Profil.axaml",
               "RelativeDocumentMoniker": "DemoFebruar\\Profil.axaml",
               "ToolTip": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\Profil.axaml",
               "RelativeToolTip": "DemoFebruar\\Profil.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-21T08:19:49.947Z"
+              "WhenOpened": "2025-02-21T10:18:25.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Profil.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\Profil.axaml.cs",
+              "RelativeDocumentMoniker": "DemoFebruar\\Profil.axaml.cs",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430 (5)\\DemoFebruary\\DemoFebruar\\Profil.axaml.cs",
+              "RelativeToolTip": "DemoFebruar\\Profil.axaml.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAIwOYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T10:33:08.727Z",
+              "EditorCaption": ""
             }
           ]
         }

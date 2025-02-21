@@ -148,27 +148,7 @@
 								</DataTemplate>
 							</ComboBox.ItemTemplate>
 						</ComboBox>
-
-					</DockPanel>
-
-					<DockPanel Margin="0 20 0 0">
-						
-						<TextBlock Text="Supervisor: "
-								   HorizontalAlignment="Left"
-								   VerticalAlignment="Center"/>
-
-						<ComboBox Margin="20 0 0 0"
-								  Name="pototdel"
-								  HorizontalAlignment="Right"
-								  VerticalAlignment="Center">
-							<ComboBox.ItemTemplate>
-								<DataTemplate>
-									<TextBlock Text="{Binding Name}"/>
-								</DataTemplate>
-							</ComboBox.ItemTemplate>
-						</ComboBox>
-
-					</DockPanel>
+					</DockPanel>				
 
 				</StackPanel>
 
@@ -210,19 +190,9 @@
 								   HorizontalAlignment="Center"
 								   VerticalAlignment="Center"/>
 					</Button>
-
 				</DockPanel>
-
 			</Grid>
-		</Border>
-
-
-		
-		
-		
-		
-		
-
+		</Border>		
 
 		<Border Grid.Column="0"
 				Grid.Row="0"
@@ -313,21 +283,7 @@
 								   VerticalAlignment="Center"
 								   Text="{Binding JobTitleNavigation.Name}"/>
 
-					</DockPanel>
-
-					<DockPanel Margin="0 20 0 0">
-						<TextBlock Text="Подотдел: "
-								   HorizontalAlignment="Left"
-								   VerticalAlignment="Center"/>
-
-						<TextBlock Margin="20 0 0 0"
-								   HorizontalAlignment="Right"
-								   VerticalAlignment="Center"
-								   Name="Supervisor"
-								   Text="{Binding Supervisor}"/>
-
-					</DockPanel>
-					
+					</DockPanel>					
 				</StackPanel>
 
 				<Button Margin="20"
@@ -343,10 +299,7 @@
 							   HorizontalAlignment="Center"
 							   VerticalAlignment="Center"/>
 				</Button>
-
 			</Grid>
-
-
 		</Border>
 
 		<Border Grid.Column="1"

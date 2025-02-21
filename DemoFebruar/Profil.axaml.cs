@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using DemoFebruar.Context;
 using DemoFebruar.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,10 +19,10 @@ public partial class Profil : Window
     List<Cabinet> cabinets = new List<Cabinet>();
     List<JobTitle> jobTitl = new List<JobTitle>();
     List<PotOtdel> potOtdel = new List<PotOtdel>();
-    List<StructuralSeparation> structuralSeparation = new List<StructuralSeparation>();
+    List<Division> divisionss = new List<Division>();
 
     public Profil()
-    {fafasdfa
+    {
         InitializeComponent();
         employee1 = new Employee();
         Uvolit.IsVisible = false;
@@ -37,12 +38,11 @@ public partial class Profil : Window
         employee1 = employee;
 
         prof.DataContext = employee1;
-
-        Helper.Base.Employees.Include(p => p.StructuralSeparationNavigation)
-                             .Include(p => p.JobTitleNavigation)
+        
+        Helper.Base.Employees.Include(p => p.JobTitleNavigation)
+                             .Include(a => a.IdOtdels)
                              .Include(a => a.AssistantId)
-                             .Include(k => k.SupervisorId)
-                             .Select(a => a.Id == employee1.StructuralSeparation);
+                             .Include(k => k.SupervisorId);
 
 
         BrightDayBox.SelectedDate = new DateTimeOffset(employee1.BrightDay.Year, employee1.BrightDay.Month, employee1.BrightDay.Day,0,0,0,new TimeSpan());
@@ -59,20 +59,13 @@ public partial class Profil : Window
             Cabinetss.ItemsSource = cabinets.OrderByDescending(g => g.Id == employee1.Cabinet);
             Cabinetss.SelectedIndex = 0;
 
-            structuralSeparation = Helper.Base.StructuralSeparations.ToList();
-            structuralseparationS.ItemsSource = structuralSeparation.OrderByDescending(g => g.Id == employee1.StructuralSeparation);
+            divisionss = Helper.Base.Divisions.ToList();
+            structuralseparationS.ItemsSource = divisionss.OrderByDescending(g => g.Id == employee1.Id);
             structuralseparationS.SelectedIndex = 0;
 
             jobTitl = Helper.Base.JobTitles.ToList();
             Jobs.ItemsSource = jobTitl.OrderByDescending(g => g.Id == employee1.JobTitle);
             Jobs.SelectedIndex = 0;
-
-            /*
-            potOtdel = Helper.Base.PotOtdels.ToList();
-            pototdel.ItemsSource = potOtdel.OrderByDescending(g => g.Id == employee1.StructuralSeparationNavigation.Divisions.Any(x => x.IdPototdelNavigation.Id));
-            pototdel.SelectedIndex = 0;
-            */
-
         }
         else
         {
@@ -81,9 +74,9 @@ public partial class Profil : Window
             Cabinetss.ItemsSource = cabinets.OrderByDescending(g => g.Cabinet1 == "Выбрать кабинет");
             Cabinetss.SelectedIndex = 0;
 
-            structuralSeparation = Helper.Base.StructuralSeparations.ToList();
-            structuralSeparation.Add(new StructuralSeparation() { Name = "Выбрать подразделение" });
-            structuralseparationS.ItemsSource = structuralSeparation.OrderByDescending(g => g.Name == "Выбрать подразделение");
+            divisionss = Helper.Base.Divisions.ToList();
+            divisionss.Add(new Division() { Name = "Выбрать подразделение" });
+            structuralseparationS.ItemsSource = divisionss.OrderByDescending(g => g.Name == "Выбрать подразделение");
             structuralseparationS.SelectedIndex = 0;
 
             jobTitl = Helper.Base.JobTitles.ToList();
@@ -117,9 +110,9 @@ public partial class Profil : Window
             {
                 employee1.Cabinet = CABINET.Id;
             }
-            if (structuralseparationS.SelectedItem is StructuralSeparation STRUCTUAL)
+            if (structuralseparationS.SelectedItem is Division DIVISIONS)
             {
-                employee1.StructuralSeparation = STRUCTUAL.Id;
+                employee1.Id = DIVISIONS.Id;
             }
             if (Jobs.SelectedItem is JobTitle JOBS)
             {
@@ -127,6 +120,19 @@ public partial class Profil : Window
             }
 
             employee1.BrightDay = new DateOnly(BrightDayBox.SelectedDate.Value.Year, BrightDayBox.SelectedDate.Value.Month, BrightDayBox.SelectedDate.Value.Day);
+
+
+
+
+            using(var context = new DimaBaseContext())
+            {
+                employee1.IdOtdels.Clear();
+                context.SaveChanges();
+            }
+           
+
+            employee1.IdOtdels.Add(structuralseparationS.SelectedItem as Division);
+
 
             Helper.Base.Employees.Update(employee1);
         }
@@ -137,7 +143,9 @@ public partial class Profil : Window
             employee1.CorporateEmail = corporateEmail.Text;
 
             employee1.Cabinet = Cabinetss.SelectedIndex;
-            employee1.StructuralSeparation = structuralseparationS.SelectedIndex;
+
+            employee1.IdOtdels.Add(structuralseparationS.SelectedItem as Division);
+
             employee1.JobTitle = Jobs.SelectedIndex;
 
             employee1.BrightDay = new DateOnly(BrightDayBox.SelectedDate.Value.Year, BrightDayBox.SelectedDate.Value.Month, BrightDayBox.SelectedDate.Value.Day);
@@ -147,8 +155,8 @@ public partial class Profil : Window
 
         if (employee1.Fio != null)
         {
-            if (employee1.StructuralSeparation != null & employee1.StructuralSeparation != 0)
-            {
+           // if (employee1.StructuralSeparation != null & employee1.StructuralSeparation != 0)
+           // {
                 if (employee1.JobTitle != null && employee1.JobTitle != 0)
                 {
                     if (employee1.WorkPhone != null)
@@ -157,7 +165,11 @@ public partial class Profil : Window
                         {
                             if (employee1.BrightDay != null)
                             {
-                                Helper.Base.SaveChanges();
+                            using(var context = new DimaBaseContext())
+                            {
+                                context.SaveChanges();
+                            }
+                               
                                 Profill.IsVisible = true;
                                 RedactProfil.IsVisible = false;
                             }
@@ -188,13 +200,13 @@ public partial class Profil : Window
                     Error error = new Error(warning);
                     error.ShowDialog(this);
                 }
-            }
-            else
-            {
-                string warning = "Ошибка! Выберите Структуру!";
-                Error error = new Error(warning);
-                error.ShowDialog(this);
-            }
+           // }
+           // else
+           // {
+           //     string warning = "Ошибка! Выберите Структуру!";
+            //    Error error = new Error(warning);
+            //    error.ShowDialog(this);
+           // }
         }
         else
         {
@@ -210,8 +222,13 @@ public partial class Profil : Window
 
     private void Button_Click_Udlit(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        
+        int ida = employee1.Id;
 
+
+
+
+
+        //Helper.Base.AbsenceCalendars.Add();
 
     }
 

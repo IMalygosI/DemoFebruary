@@ -21,10 +21,8 @@ namespace DemoFebruar
         private void LoadEmployees()
         {
             employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation)
-                                             .Include(a => a.CabinetNavigation)
-                                             .Include(a => a.StructuralSeparationNavigation)
-                                             .ThenInclude(ss => ss.Divisions)
-                                             .ThenInclude(d => d.IdPototdelNavigation).ToList();
+                                             .Include(a => a.IdOtdels)
+                                             .Include(a => a.CabinetNavigation).ToList();
 
             if (Deportament == 0)
             {
@@ -63,9 +61,11 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                                                     e.StructuralSeparationNavigation.Divisions != null &&
-                                                     e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x=>x.Id == VariantDep)).ToList();                
+
+
+
                 }
             }
             else if (Deportament == 2)
@@ -85,9 +85,10 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
+
                 }
             }
             else if (Deportament == 3)
@@ -108,9 +109,10 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
+
                 }
             }
             else if (Deportament == 4)
@@ -131,9 +133,10 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
+
                 }
             }
             else if (Deportament == 5)
@@ -154,9 +157,10 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
+
                 }
             }
             else if (Deportament == 6)
@@ -177,9 +181,9 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
                 }
             }
             else if (Deportament == 7)
@@ -200,9 +204,9 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
                 }
             }
             else if (Deportament == 8)
@@ -223,9 +227,9 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
                 }
             }
             else if (Deportament == 9)
@@ -246,9 +250,9 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
                 }
             }
             else if (Deportament == 10)
@@ -269,9 +273,9 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
                 }
             }
             else if (Deportament == 11)
@@ -292,9 +296,9 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
                 }
             }
             else if (Deportament == 12)
@@ -315,9 +319,9 @@ namespace DemoFebruar
 
                 if (VariantDep != 0)
                 {
-                    employees = employees.Where(e => e.StructuralSeparationNavigation != null &&
-                  e.StructuralSeparationNavigation.Divisions != null &&
-                  e.StructuralSeparationNavigation.Divisions.Any(d => d.IdPototdel == VariantDep)).ToList();
+
+                    employees = employees.Where(x => x.IdOtdels.Any(x => x.Id == VariantDep)).ToList();
+
                 }
             }
 
