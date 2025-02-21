@@ -1,0 +1,2292 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1900" d:DesignHeight="990"
+		x:CompileBindings="False"
+        x:Class="DemoFebruar.MainWindow"
+        Title="Главное окно">
+	<Border>
+		<Grid ShowGridLines="False"
+			  ColumnDefinitions="*,*"
+			  RowDefinitions="*,9*">
+
+			<DockPanel Grid.ColumnSpan="2"
+					   Grid.Row="0"
+					   Background="#e1f4c8">
+
+				<Border CornerRadius="45"
+						BorderThickness="1"
+						BorderBrush="Black"
+						Height="75"
+						Width="75"
+						Margin="10 0 0 0"
+						Background="#78b24b"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Center">
+
+					<TextBlock Text="Логотип"
+							   FontWeight="Bold"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+				</Border>
+
+				<Border HorizontalAlignment="Left"
+						VerticalAlignment="Center"
+						Margin="40 0 0 0"
+						CornerRadius="10"
+						Width="1400"
+						Height="40"
+						Background="White">
+					<TextBlock Text="Организационная структура"
+							   Margin="20 0 0 0"
+							   HorizontalAlignment="Left"
+							   VerticalAlignment="Center"/>
+				</Border>
+			</DockPanel>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="UpravlenFinansamiDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<StackPanel HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Margin="0 0 310 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 0"
+							  Margin="0 0 200 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="37"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="10. Управление Финансового планирования и контроля"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</StackPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="UpravObespDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="43"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="12.1. Управление нормативного обеспечения и договорной работы"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 0">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="44"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="12.2. Юридический департамент"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="KaznaDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="38"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="11.1. Управление бухгалтерского и налогового учета"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 0">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="39"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="11.2. Управление казначейства"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 0">
+
+						<Line StartPoint="0, 110"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="40"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="11.2.1. Операционный отдел"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -55 0 0">
+
+
+						<Line StartPoint="0, 110"
+								  EndPoint="0, 0"
+								  VerticalAlignment="Center"
+								  HorizontalAlignment="Center"
+								  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="41"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="11.3. Финансово-экономический департамент"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 0">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="42"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="11.4. Финансово-экономическое управление"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="AnaliticDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="35"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="9.1. Аналитический отдел"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="36"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="9.2. Отдел проектного управления"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="WorkPromDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<StackPanel HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Margin="0 0 310 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 0"
+							  Margin="0 0 200 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="34"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="8. Департамент по работе с промышленностью"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</StackPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="WorkPersonalDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<StackPanel HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Margin="0 0 310 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 0"
+							  Margin="0 0 200 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="33"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="7. Департамент по работе с персоналом"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</StackPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="CorrporatDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<StackPanel HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Margin="0 0 310 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 0"
+							  Margin="0 0 200 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="32"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="6. Департамент по организации корпоративов"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</StackPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="MarcetingDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="24"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="5.1. Департамент маркетинга и партнерских отношений"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="25"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="5.2. Управление маркетинга"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 0">
+
+						<Line StartPoint="0, 110"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="26"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="5.2.1. Лицензионный отдел"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 -23">
+
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="27"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="5.2.2. Управление маркетинга"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 5">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="28"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="5.3. Управление по развитию бизнеса"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 5">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="29"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="5.3.1. Отдел по  привлечению новых клиентов"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -33 0 0">
+
+						<Line StartPoint="0, 120"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="30"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="5.3.2. Отдел по организации мероприятий"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 5">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="31"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="5.4. Управление по развитию партнерских отношений"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="CommunicatorDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="16"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="4.1. Департамент коммуникаций"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="17"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="4.2. Управление по PR-проектам"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 0">
+
+						<Line StartPoint="0, 110"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="18"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="4.2.1. Отдел по организации и сопровождению мероприятий"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 -23">
+
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="19"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="4.2.2. Отдел по работе с корпорациями"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 5">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="20"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="4.3. Управление Пресс-службы"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 5">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="21"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="4.3.1. Отдел по работе со СМИ"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -33 0 0">
+
+						<Line StartPoint="0, 120"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="22"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="4.3.2. Отдел цифровых коммуникаций"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 5">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="23"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="4.3.3. Управление Пресс-службы"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="ApparatUpravlenDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<StackPanel HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Margin="0 0 310 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 0"
+							  Margin="0 0 200 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="15"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="3. Аппарат управления"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</StackPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="AcademicDorogiDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="11"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="2.1. Академия Умные дороги"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="12"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="2.2. Отдел сетевых программ"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 0">
+
+						<Line StartPoint="0, 110"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="13"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="2.3. Проектно-аналитический отдел"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 -23">
+
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="14"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="2.4. Учебно-организационный отдел"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="AdministrativeDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 510 0">
+
+						<Button BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="0"
+								Height="45"
+								Width="220">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="1"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.1. Административный департамент"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 -23">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="2"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.2. Договорной отдел"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 0">
+
+						<Line StartPoint="0, 110"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="3"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.3. Общий отдел"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 -23">
+
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="4"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.4. Отдел закупок"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 5">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="5"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.5. Отдел протокольного сопровождения"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 5">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="6"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.6. Управление административно-хозяйственной деятельности"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -33 0 0">
+
+						<Line StartPoint="0, 120"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="7"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.6.1. Отдел ИТ"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 5">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="8"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.6.2. Управление административно-хозяйственной деятельности"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -28 0 0">
+
+						<Line StartPoint="0, 120"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="9"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.7. Управление безопасности"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 -23 0 0">
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_Department"
+								Tag="10"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="1.8. Управление по обеспечению безопасности"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="0"
+					Grid.Row="1"
+					IsVisible="False"
+					Name="VseDepartament"
+					Margin="25 40 5 90"
+					Background="Silver">
+
+				<StackPanel VerticalAlignment="Top"
+							Margin="0 20 0 0">
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 520 0">
+
+						<Border BorderThickness="2"
+								BorderBrush="Red"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="280">
+
+							<TextBlock Text="Дороги России"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Border>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Center"
+							   Margin="0 0 0 5">
+
+						<Line StartPoint="0, 100"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								Background="Green"
+								BorderBrush="Aqua"
+								Click="Button_Click_DepartmentSort"
+								Tag="1"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="Административный департамент"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -55 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								Click="Button_Click_DepartmentSort"
+								Tag="2"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="Aкадемия Умные дороги"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="3"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="Аппарат управления"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="4"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="Департамент коммуникаций"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Click="Button_Click_DepartmentSort"
+								Tag="5"
+								Width="420">
+
+							<TextBlock Text=" Департамент маркетинга и партнерских отношений"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="6"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="Департамент по организации корпоративов"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Click="Button_Click_DepartmentSort"
+								Tag="7"
+								Height="45"
+								Width="420">
+
+							<TextBlock Text="Департамент по работе с персоналом"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Width="420"
+								Click="Button_Click_DepartmentSort"
+								Tag="8">
+
+							<TextBlock Text="Департамент по работе с промышленностью"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Click="Button_Click_DepartmentSort"
+								Tag="9"
+								Width="420">
+
+							<TextBlock Text="Департамент стратегии и планирования"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Click="Button_Click_DepartmentSort"
+								Tag="10"
+								Width="420">
+
+							<TextBlock Text="Управление Финансового планирования и контроля"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -50 0 0">
+
+						<Line StartPoint="0, 50"
+							  EndPoint="0, 100"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Click="Button_Click_DepartmentSort"
+								Tag="11"
+								Width="420">
+
+							<TextBlock Text="Финансово-экономический департамент"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+
+					<DockPanel HorizontalAlignment="Center"
+							   VerticalAlignment="Top"
+							   Margin="0 -22 0 0">
+
+						<Line StartPoint="0, 0"
+							  EndPoint="0, 0"
+							  VerticalAlignment="Center"
+							  HorizontalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Line StartPoint="110, 0"
+							  EndPoint="0, 0"
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  Stroke="Black"/>
+
+						<Button BorderThickness="1"
+								BorderBrush="Aqua"
+								Background="Green"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Height="45"
+								Click="Button_Click_DepartmentSort"
+								Tag="12"
+								Width="420">
+
+							<TextBlock Text="Юридический департамент"
+									   Foreground="White"
+									   HorizontalAlignment="Center"
+									   VerticalAlignment="Center"/>
+						</Button>
+					</DockPanel>
+				</StackPanel>
+			</Border>
+
+			<Border Grid.Column="1"
+					Grid.Row="1"
+					Margin="5 40 25 90"
+					Background="Silver">
+
+				<Grid RowDefinitions="6*,*">
+
+					<ListBox CornerRadius="0"
+							 BorderThickness="0"
+							 Grid.Column="0"
+							 Grid.Row="0"
+							 DoubleTapped="ListBox_DoubleTapped_Redact"
+							 BorderBrush="Black"
+							 Background="Silver"
+							 Name="ListBox_Personal">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<Border Background="#e1f4c8"
+										Margin="5">
+									<Grid ShowGridLines="False"
+										  ColumnDefinitions="Auto"
+										  RowDefinitions="40,40,40,40">
+
+										<DockPanel Grid.Column="0"
+												   Grid.Row="0"
+												   HorizontalAlignment="Left"
+												   VerticalAlignment="Center"
+												   Margin="10 0 0 0">
+											<TextBlock Text="{Binding StructuralSeparationNavigation.Name}"/>
+											<TextBlock Text=" - "/>
+											<TextBlock Text="{Binding JobTitleNavigation.Name}"
+													   Margin="10 0 0 0"/>
+										</DockPanel>
+
+										<DockPanel Grid.Column="0"
+												   Grid.Row="2"
+												   HorizontalAlignment="Left"
+												   VerticalAlignment="Center"
+												   Margin="10 0 0 0">
+											<TextBlock Text="{Binding WorkPhone}"/>
+											<TextBlock Text="{Binding CorporateEmail}"
+													   Margin="10 0 0 0"/>
+										</DockPanel>
+
+										<TextBlock Grid.Column="0"
+												   Grid.Row="1"
+												   FontSize="17"
+												   HorizontalAlignment="Left"
+												   VerticalAlignment="Center"
+												   Margin="10 0 0 0"
+												   Text="{Binding Fio}"/>
+
+										<TextBlock Grid.Column="0"
+												   Grid.Row="3"
+												   FontSize="17"
+												   HorizontalAlignment="Left"
+												   VerticalAlignment="Center"
+												   Margin="10 0 0 0"
+												   Text="{Binding CabinetNavigation.Cabinet1}"/>
+
+									</Grid>
+								</Border>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+
+					<Button Grid.Column="0"
+							Grid.Row="1"
+							Height="75"
+							Width="75"
+							Click="Button_Click_Dob"
+							Margin="0 0 15 15"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Bottom"
+							Background="#e1f4c8">
+						<TextBlock Text="+"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontSize="40"/>
+					</Button>
+
+				</Grid>
+			</Border>
+
+		</Grid>
+	</Border>
+</Window>

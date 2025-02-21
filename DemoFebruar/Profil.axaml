@@ -1,0 +1,526 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1500" d:DesignHeight="990"
+		MaxWidth="1500" MinWidth="1500"
+		MaxHeight="990" MinHeight="990"
+		x:CompileBindings="False"
+        x:Class="DemoFebruar.Profil"
+        Title="Profil">
+	<Grid Background="Silver"
+		  Name="prof"
+		  ShowGridLines="False"
+		  ColumnDefinitions="*,*"
+		  RowDefinitions="*">
+		
+		<Border Grid.Column="0"
+				Grid.Row="0"
+				Background="White"
+				Margin="20"
+				IsVisible="False"
+				Name="RedactProfil">
+
+			<Grid ShowGridLines="False"
+				  RowDefinitions="12*,*">
+
+				<StackPanel Grid.Row="0"
+							Margin="10"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top">
+
+					<DockPanel Margin="0 10 0 0">
+						
+						<TextBlock Text="ФИО: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+						
+						<TextBox Margin="10 0 0 0"
+								 Width="250"
+								 Name="FIO"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding Fio}"/>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="День рождения: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<DatePicker Name="BrightDayBox"
+									Margin="20 0 0 0"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Center"/>
+
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Телефон: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<MaskedTextBox Name="phoneMaskedTextBox"
+									   Margin="10 0 0 0"
+									   HorizontalAlignment="Right"
+									   VerticalAlignment="Center"
+									   Width="160"
+									   Mask="+7 (999) 999-99-99"
+									   Text="{Binding WorkPhone}"/>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Email: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBox Margin="10 0 0 0"
+								 Width="250"
+								 Name="corporateEmail"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding CorporateEmail}"/>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Кабинет: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<ComboBox Margin="20 0 0 0"
+								  Height="33"
+								  Width="400"
+								  Name="Cabinetss"
+								  HorizontalAlignment="Right"
+								  VerticalAlignment="Center">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Cabinet1}"/>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Структура: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<ComboBox Margin="20 0 0 0"
+								  Height="33"
+								  Width="400"
+								  Name="structuralseparationS"
+								  HorizontalAlignment="Right"
+								  VerticalAlignment="Center">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}"/>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+						
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Работа: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<ComboBox Margin="20 0 0 0"
+								  Height="33"
+								  Width="400"
+								  Name="Jobs"
+								  HorizontalAlignment="Right"
+								  VerticalAlignment="Center">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}"/>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						
+						<TextBlock Text="Supervisor: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<ComboBox Margin="20 0 0 0"
+								  Name="pototdel"
+								  HorizontalAlignment="Right"
+								  VerticalAlignment="Center">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}"/>
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+
+					</DockPanel>
+
+				</StackPanel>
+
+				<DockPanel Margin="20"
+						   Grid.Row="1"
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Top">
+
+					<Button Click="Button_Click_Save"
+							Background="Green"
+							BorderBrush="Aqua"
+							BorderThickness="2">
+						<TextBlock Text="Сохранить"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+					<Button Click="Button_Click_Otmen"
+							Background="Gray"
+							BorderBrush="Aqua"
+							Margin="10 0 0 0"
+							BorderThickness="2">
+						<TextBlock Text="Отмена"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+					<Button Click="Button_Click_Udlit"
+							Background="Red"
+							IsVisible="True"
+							Name="Uvolit"
+							BorderBrush="Aqua"
+							Margin="10 0 0 0"
+							BorderThickness="2">
+						<TextBlock Text="Уволить"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+				</DockPanel>
+
+			</Grid>
+		</Border>
+
+
+		
+		
+		
+		
+		
+
+
+		<Border Grid.Column="0"
+				Grid.Row="0"
+				Background="White"
+				Margin="20"
+				IsVisible="True"
+				Name="Profill">
+
+			<Grid ShowGridLines="False"
+				  RowDefinitions="12*,*">
+
+				<StackPanel Grid.Row="0"
+							Margin="10"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top">
+
+					<DockPanel Margin="0 10 0 0">
+						<TextBlock Text="ФИО: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+						<TextBlock Margin="10 0 0 0"
+								   HorizontalAlignment="Right"
+								   VerticalAlignment="Center"
+								   Text="{Binding Fio}"/>
+
+					</DockPanel>
+					
+					<DockPanel Margin="0 20 0 0">
+						<TextBlock Text="День рождения: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBlock Margin="20 0 0 0"
+								   HorizontalAlignment="Right"
+								   VerticalAlignment="Center"
+								   Text="{Binding BrightDay}"/>
+
+					</DockPanel>
+					
+					<DockPanel Margin="0 20 0 0">
+						<TextBlock Text="Телефон: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+						<TextBlock Margin="10 0 0 0"
+								   HorizontalAlignment="Right"
+								   VerticalAlignment="Center"
+								   Text="{Binding WorkPhone}"/>
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						<TextBlock Text="Email: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+						<TextBlock Margin="10 0 0 0"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding CorporateEmail}"/>
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						<TextBlock Text="Кабинет: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+						<TextBlock Margin="10 0 0 0"
+								 HorizontalAlignment="Right"
+								 VerticalAlignment="Center"
+								 Text="{Binding CabinetNavigation.Cabinet1}"/>
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						<TextBlock Text="Структура: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBlock Margin="20 0 0 0"
+								   HorizontalAlignment="Right"
+								   VerticalAlignment="Center"
+								   Text="{Binding StructuralSeparationNavigation.Name}"/>
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						<TextBlock Text="Работа: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBlock Margin="20 0 0 0"
+								   HorizontalAlignment="Right"
+								   VerticalAlignment="Center"
+								   Text="{Binding JobTitleNavigation.Name}"/>
+
+					</DockPanel>
+
+					<DockPanel Margin="0 20 0 0">
+						<TextBlock Text="Подотдел: "
+								   HorizontalAlignment="Left"
+								   VerticalAlignment="Center"/>
+
+						<TextBlock Margin="20 0 0 0"
+								   HorizontalAlignment="Right"
+								   VerticalAlignment="Center"
+								   Name="Supervisor"
+								   Text="{Binding Supervisor}"/>
+
+					</DockPanel>
+					
+				</StackPanel>
+
+				<Button Margin="20"
+						Click="Button_Click_Redact"
+						Background="Green"
+						BorderBrush="Aqua"
+						Grid.Row="1"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						BorderThickness="2">
+					<TextBlock Text="Редактировать"
+							   Foreground="White"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+				</Button>
+
+			</Grid>
+
+
+		</Border>
+
+		<Border Grid.Column="1"
+				Grid.Row="0"
+				Background="White"
+				Margin="20">
+
+			<Grid ShowGridLines="False"
+				  ColumnDefinitions="*"
+				  RowDefinitions="*,11*,*">
+
+				<DockPanel Grid.Row="0"
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Center">
+
+					<Button Margin="20 0 0 0"
+							Height="33"
+							Width="110"
+							BorderBrush="Gray"
+							BorderThickness="1"
+							Background="Green">
+						<TextBlock Text="Прошедшие"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+					<Button Margin="5 0 0 0"
+							Height="33"
+							Width="110"
+							BorderBrush="Gray"
+							BorderThickness="1"
+							Background="Green">
+						<TextBlock Text="Текущие"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+
+					<Button Margin="5 0 0 0"
+							Height="33"
+							Width="110"
+							BorderBrush="Gray"
+							BorderThickness="1"
+							Background="Green">
+						<TextBlock Text="Будущие"
+								   Foreground="White"
+								   HorizontalAlignment="Center"
+								   VerticalAlignment="Center"/>
+					</Button>
+				</DockPanel>
+
+				<StackPanel Margin="20 45 20 0"
+							Grid.Row="1">
+
+					<TextBlock Text="Обучения"
+						   Grid.Row="1"/>
+
+					<Grid ShowGridLines="False"
+						  ColumnDefinitions="*"
+						  RowDefinitions="*"
+						  Margin="0 5 0 0">
+						<ListBox Background="Silver"
+								 Height="50"
+								 VerticalAlignment="Top"
+								 Grid.Row="1">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Border>
+										<Grid ShowGridLines="True"
+											  ColumnDefinitions="*,*"
+											  RowDefinitions="*,*">
+
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+					</Grid>
+
+					<TextBlock Text="Командировки"
+							   Margin="0 10 0 0"
+							   Grid.Row="1"/>
+					
+					<Grid ShowGridLines="False"
+						  ColumnDefinitions="*"
+						  RowDefinitions="*"
+						  Margin="0 10 0 0">
+						<ListBox Background="Silver"
+								 Height="50"
+								 VerticalAlignment="Top"
+								 Grid.Row="1">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Border>
+										<Grid ShowGridLines="True"
+											  ColumnDefinitions="*,*"
+											  RowDefinitions="*,*">
+
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+					</Grid>
+
+					<TextBlock Text="Отгулы"
+							   Grid.Row="1"
+							   Margin="0 10 5 0"/>
+
+					<Grid ShowGridLines="False"
+						  ColumnDefinitions="*"
+						  RowDefinitions="*"
+						  Margin="0 5 0 0">
+						<ListBox Background="Silver"
+								 Height="50"
+								 VerticalAlignment="Top"
+								 Grid.Row="1">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Border>
+										<Grid ShowGridLines="True"
+											  ColumnDefinitions="*,*"
+											  RowDefinitions="*,*">
+
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+					</Grid>
+
+					<TextBlock Text="Отпуска"
+							   Grid.Row="1"
+							   Margin="0 10 5 0"/>
+
+					<Grid ShowGridLines="False"
+						  ColumnDefinitions="*"
+						  RowDefinitions="*"
+						  Margin="0 5 0 0">
+						<ListBox Background="Silver"
+								 Height="50"
+								 VerticalAlignment="Top"
+								 Grid.Row="1">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Border>
+										<Grid ShowGridLines="True"
+											  ColumnDefinitions="*,*"
+											  RowDefinitions="*,*">
+
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+					</Grid>
+
+				</StackPanel>
+
+				<Button Margin="20"
+						Click="Button_Click_Out"
+						HorizontalAlignment="Right"
+						VerticalAlignment="Center"
+						BorderThickness="1"
+						Background="Red"
+						BorderBrush="Aqua"
+						Grid.Row="2">
+					<TextBlock Text="Выйти"
+							   Foreground="White"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+				</Button>
+			</Grid>
+		</Border>
+	</Grid>
+</Window>
