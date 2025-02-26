@@ -23,18 +23,21 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DemoFebruar
-build_property.ProjectDir = C:\Users\prdb\Desktop\Новая папка (5)\DemoFebruary\DemoFebruar\
+build_property.ProjectDir = C:\Users\prdb\Desktop\Sessia\DemoFebruary\DemoFebruar\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/prdb/Desktop/Новая папка (5)/DemoFebruary/DemoFebruar/App.axaml]
+[C:/Users/prdb/Desktop/Sessia/DemoFebruary/DemoFebruar/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/prdb/Desktop/Новая папка (5)/DemoFebruary/DemoFebruar/Error.axaml]
+[C:/Users/prdb/Desktop/Sessia/DemoFebruary/DemoFebruar/Error.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/prdb/Desktop/Новая папка (5)/DemoFebruary/DemoFebruar/MainWindow.axaml]
+[C:/Users/prdb/Desktop/Sessia/DemoFebruary/DemoFebruar/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/prdb/Desktop/Новая папка (5)/DemoFebruary/DemoFebruar/Profil.axaml]
+[C:/Users/prdb/Desktop/Sessia/DemoFebruary/DemoFebruar/NewsPract.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/prdb/Desktop/Sessia/DemoFebruary/DemoFebruar/Profil.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

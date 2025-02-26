@@ -4281,11 +4281,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\prdb\\Desktop\\Новая папка (5)\\DemoFebruary\\DemoFebruar\\DemoFebruar.csproj",
+      "projectUniqueName": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\DemoFebruar.csproj",
       "projectName": "DemoFebruar",
-      "projectPath": "C:\\Users\\prdb\\Desktop\\Новая папка (5)\\DemoFebruary\\DemoFebruar\\DemoFebruar.csproj",
+      "projectPath": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\DemoFebruar.csproj",
       "packagesPath": "C:\\Users\\prdb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\prdb\\Desktop\\Новая папка (5)\\DemoFebruary\\DemoFebruar\\obj\\",
+      "outputPath": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\prdb\\AppData\\Roaming\\NuGet\\NuGet.Config",
