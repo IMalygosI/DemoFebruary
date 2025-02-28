@@ -38,6 +38,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/dimau/Desktop/Sessia/DemoFebruary/DemoFebruar/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/dimau/Desktop/Sessia/DemoFebruary/DemoFebruar/Navigation.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/dimau/Desktop/Sessia/DemoFebruary/DemoFebruar/NewsPract.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

@@ -9,7 +9,7 @@
 	<Border>
 		<Grid ShowGridLines="False"
 			  ColumnDefinitions="*,*"
-			  RowDefinitions="*,9*">
+			  RowDefinitions="*,9*,0.7*">
 
 			<DockPanel Grid.ColumnSpan="2"
 					   Grid.Row="0"
@@ -1777,7 +1777,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="VseDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -2205,7 +2205,7 @@
 
 			<Border Grid.Column="1"
 					Grid.Row="1"
-					Margin="5 40 25 90"
+					Margin="5 40 25 30"
 					Background="Silver">
 
 				<Grid RowDefinitions="6*,*">
@@ -2287,6 +2287,21 @@
 				</Grid>
 			</Border>
 
+
+			<Button Grid.Column="1"
+					Grid.Row="2"
+					Click="Button_Click_Out"
+					Background="#78b24b"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Center"
+					Margin="0 0 25 0">
+				<TextBlock Text="Выйти"
+						   Foreground="White"
+						   FontWeight="Bold"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+			</Button>
+			
 		</Grid>
 	</Border>
 </Window>

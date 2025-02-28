@@ -15,7 +15,7 @@ namespace DemoFebruar
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new NewsPract();
+                desktop.MainWindow = new Navigation();
             }
 
             base.OnFrameworkInitializationCompleted();

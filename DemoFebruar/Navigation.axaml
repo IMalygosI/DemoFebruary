@@ -1,0 +1,85 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1900" d:DesignHeight="990"
+		x:CompileBindings="False"
+        x:Class="DemoFebruar.Navigation"
+        Title="Навигация">
+	<Border>
+		<Grid ShowGridLines="False"
+			  ColumnDefinitions="*,*"
+			  RowDefinitions="*,9*">
+
+			<DockPanel Grid.ColumnSpan="2"
+					   Grid.Row="0"
+					   Background="#e1f4c8">
+
+				<Border CornerRadius="45"
+						BorderThickness="1"
+						BorderBrush="Black"
+						Height="75"
+						Width="75"
+						Margin="10 0 0 0"
+						Background="#78b24b"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Center">
+
+					<TextBlock Text="Логотип"
+							   FontWeight="Bold"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+				</Border>
+
+				<Border HorizontalAlignment="Left"
+						VerticalAlignment="Center"
+						Margin="40 0 0 0"
+						CornerRadius="10"
+						Width="1400"
+						Height="40"
+						Background="White">
+				</Border>
+			</DockPanel>
+
+
+			<Button Grid.Column="0"
+					Grid.Row="1"
+					Classes="Occent_Button"
+					Click="Button_Click_PublicPortal"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"
+					Width="350"
+					Height="350"
+					CornerRadius="45"
+					BorderThickness="2"
+					BorderBrush="Aqua">
+				<TextBlock Text="Перейти к публичному порталу"
+						   Foreground="White"
+						   FontWeight="Bold"
+						   FontSize="18"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+			</Button>
+
+			<Button Grid.Column="1"
+					Grid.Row="1"
+					Classes="Occent_Button"
+					Click="Button_Click_GlavnoeOkko"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"
+					Width="350"
+					Height="350"
+					CornerRadius="45"
+					BorderThickness="2"
+					BorderBrush="Aqua">
+				<TextBlock Text="Перейти к главному окну"
+						   Foreground="White"
+						   FontWeight="Bold"
+						   FontSize="18"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+			</Button>
+			
+		</Grid>
+	</Border>
+</Window>

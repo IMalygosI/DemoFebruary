@@ -26,7 +26,7 @@ public partial class NewsPract : Window
     /// <summary>
     /// Загрузка данных
     /// </summary>
-    public void Loang() 
+    public void Loang()
     {
         employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation).ToList();
 
@@ -49,4 +49,10 @@ public partial class NewsPract : Window
 
 
     private void TextBox_TextChanged(object? sender, Avalonia.Controls.TextChangedEventArgs e) => Loang();
+    private void Button_Click_Out(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        Navigation navigation = new Navigation();
+        navigation.Show();
+        Close();
+    }
 }

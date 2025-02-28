@@ -374,5 +374,12 @@ namespace DemoFebruar
             profil.Show();
             Close();
         }
+
+        private void Button_Click_Out(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            Navigation navigation = new Navigation();
+            navigation.Show();
+            Close();
+        }
     }
 }
