@@ -7,7 +7,7 @@
         x:Class="DemoFebruar.NewsPract"
         Title="Информация">
 	<Border Background="White">
-		<Grid ShowGridLines="True"
+		<Grid ShowGridLines="False"
 			  ColumnDefinitions="*"
 			  RowDefinitions="*,9*">
 
@@ -47,7 +47,7 @@
 			<Border Grid.Row="1">
 				<Grid ColumnDefinitions="*,3*"
 					  RowDefinitions="200,390,*"
-					  ShowGridLines="True"
+					  ShowGridLines="False"
 					  Margin="20 20 20 10">
 
 					<StackPanel Grid.ColumnSpan="2"
@@ -197,7 +197,7 @@
 								   FontSize="21"
 								   Margin="0 10 0 10"/>
 
-						<ListBox BorderThickness="2"
+						<ListBox BorderThickness="0"
 								 Background="White"
 								 Height="610"
 								 Name="Listbox_News">
@@ -210,33 +210,51 @@
 							
 							<ListBox.ItemTemplate>
 								<DataTemplate>
-									<Border>
-										<Grid>
+									<Border Background="Silver">
+										<Grid ColumnDefinitions="410"
+											  RowDefinitions="175, 155, 20"
+											  ShowGridLines="False">
 
-
-											<StackPanel>
+											<StackPanel Grid.Row="1"
+														Background="#78b24b">
 
 												<TextBlock Text="{Binding title}"
+														   TextWrapping="Wrap"
+														   Foreground="White"
 														   FontWeight="Bold"
-														   FontSize="16"/>
+														   FontSize="16"
+														   Margin="10 10 10 5"/>
 
-												<TextBlock Text="{Binding description}"
-														   FontSize="14"/>
+												<ScrollViewer VerticalScrollBarVisibility="Auto"
+															  HorizontalScrollBarVisibility="Disabled"
+															  MaxHeight="70" 
+															  Margin="10 0 10 10">
+													
+													<TextBlock Text="{Binding description}"
+															   TextWrapping="Wrap"
+															   Foreground="White"
+															   FontSize="14"/>
+													
+												</ScrollViewer>
 
+											</StackPanel>
+
+											<StackPanel Grid.Row="2"
+														Background="#78b24b">
+												
 												<TextBlock Text="{Binding date}"
+														   Foreground="White"
+														   FontWeight="Bold"
 														   FontSize="12"
-														   Foreground="Gray"/>
+														   Margin="10 0 0 0"/>
+											</StackPanel>
 
-											</StackPanel>	
-											
 										</Grid>
 									</Border>
 								</DataTemplate>
 							</ListBox.ItemTemplate>
 						</ListBox>
-
 					</StackPanel>
-
 				</Grid>
 			</Border>
 		</Grid>

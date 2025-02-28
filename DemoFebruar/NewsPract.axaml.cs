@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -28,8 +29,11 @@ public partial class NewsPract : Window
     public void Loang() 
     {
         employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation).ToList();
+
         // Загружаем данные из JSON
-        var json = File.ReadAllText("News/news_response.json");
+        var baseDirectory = AppContext.BaseDirectory;
+        var jsonPath = Path.Combine(baseDirectory, "News", "news_response.json");
+        var json = File.ReadAllText(jsonPath);
         // Преобразуем данные JSON в список Class1
         newsItems = JsonConvert.DeserializeObject<List<News_Jsons.Class1>>(json);
 
