@@ -48,7 +48,7 @@
 				<Grid ColumnDefinitions="*,3*"
 					  RowDefinitions="200,390,*"
 					  ShowGridLines="True"
-								Margin="20 20 20 10">
+					  Margin="20 20 20 10">
 
 					<StackPanel Grid.ColumnSpan="2"
 								Grid.Row="0">
@@ -58,15 +58,77 @@
 								   Foreground="Black"
 								   FontSize="21"
 								   Margin="0 0 0 10"/>
-
-						<ListBox BorderThickness="2"
+						
+						<ListBox BorderThickness="0"
 								 Background="White"
-								 Height="160">
+								 Height="160"
+								 Width="1100"
+								 HorizontalAlignment="Left"
+								 Name="Listbox_Employee">
+
+							<ListBox.ItemsPanel>
+								<ItemsPanelTemplate>
+									<WrapPanel HorizontalAlignment="Left"/>
+								</ItemsPanelTemplate>
+							</ListBox.ItemsPanel>
+							
 							<ListBox.ItemTemplate>
 								<DataTemplate>
-									<Border>
-										<Grid>
-											<TextBlock Text=""/>
+									<Border Background="#78b24b">
+										<Grid ColumnDefinitions="195"
+											  RowDefinitions="145"
+											  ShowGridLines="True">
+
+											<StackPanel>
+
+												<TextBlock Text="{Binding Fio}"
+														   TextWrapping="Wrap"
+														   Margin="10 10 0 0"
+														   Foreground="White"
+														   FontSize="16"
+														   FontWeight="Bold"/>
+
+												<TextBlock Text="{Binding JobTitleNavigation.Name}"
+														   TextWrapping="Wrap"
+														   Margin="10 3 0 0"
+														   Foreground="White"
+														   FontSize="13"/>
+
+												<TextBlock Text="{Binding CorporateEmail}"
+														   TextWrapping="Wrap"
+														   TextDecorations="Underline"
+														   Margin="10 0 0 0"
+														   Foreground="White"
+														   FontSize="13"/>
+
+												<TextBlock Text="{Binding WorkPhone}"
+														   TextWrapping="Wrap"
+														   Margin="10 5 0 0"
+														   Foreground="White"
+														   FontSize="11"/>
+
+												<DockPanel>
+
+													<TextBlock Text="15 декабря"
+															   TextWrapping="Wrap"
+															   Margin="10 5 0 0"
+															   Foreground="White"
+															   FontSize="13"/>
+
+													<Button Height="35"
+															Width="35"
+															Margin="0 0 10 0"
+															HorizontalAlignment="Right"
+															Opacity="0.02">
+														
+														<Image Source="/Assets/discet.png.png"
+															   Opacity="100.0"/>
+
+													</Button>
+													
+												</DockPanel>
+
+											</StackPanel>
 										</Grid>
 									</Border>
 								</DataTemplate>
@@ -92,6 +154,9 @@
 						</Calendar>
 					</StackPanel>
 
+					
+					
+					
 					<StackPanel Grid.Column="0"
 								Grid.Row="2">
 
@@ -118,6 +183,10 @@
 
 					</StackPanel>
 
+					
+					
+					
+					
 					<StackPanel Grid.Column="1"
 								Grid.RowSpan="3"
 								Margin="10 200 0 0">
@@ -130,12 +199,36 @@
 
 						<ListBox BorderThickness="2"
 								 Background="White"
-								 Height="610">
+								 Height="610"
+								 Name="Listbox_News">
+
+							<ListBox.ItemsPanel>
+								<ItemsPanelTemplate>
+									<WrapPanel HorizontalAlignment="Left"/>
+								</ItemsPanelTemplate>
+							</ListBox.ItemsPanel>
+							
 							<ListBox.ItemTemplate>
 								<DataTemplate>
 									<Border>
 										<Grid>
-											<TextBlock Text=""/>
+
+
+											<StackPanel>
+
+												<TextBlock Text="{Binding title}"
+														   FontWeight="Bold"
+														   FontSize="16"/>
+
+												<TextBlock Text="{Binding description}"
+														   FontSize="14"/>
+
+												<TextBlock Text="{Binding date}"
+														   FontSize="12"
+														   Foreground="Gray"/>
+
+											</StackPanel>	
+											
 										</Grid>
 									</Border>
 								</DataTemplate>

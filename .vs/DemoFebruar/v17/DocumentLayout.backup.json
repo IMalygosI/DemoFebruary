@@ -1,17 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\",
+  "WorkspaceRootPath": "C:\\Users\\dimau\\Desktop\\Sessia\\DemoFebruary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\sessia\\demofebruary\\demofebruar\\newspract.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\dimau\\desktop\\sessia\\demofebruary\\demofebruar\\newspract.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\newspract.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\sessia\\demofebruary\\demofebruar\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\prdb\\desktop\\sessia\\demofebruary\\demofebruar\\newspract.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\dimau\\desktop\\sessia\\demofebruary\\demofebruar\\newspract.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\newspract.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -25,44 +21,34 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\App.axaml.cs",
-              "RelativeDocumentMoniker": "DemoFebruar\\App.axaml.cs",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\App.axaml.cs",
-              "RelativeToolTip": "DemoFebruar\\App.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T07:39:13.329Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "NewsPract.axaml",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\NewsPract.axaml",
+              "DocumentMoniker": "C:\\Users\\dimau\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\NewsPract.axaml",
               "RelativeDocumentMoniker": "DemoFebruar\\NewsPract.axaml",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\NewsPract.axaml",
-              "RelativeToolTip": "DemoFebruar\\NewsPract.axaml",
+              "ToolTip": "C:\\Users\\dimau\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\NewsPract.axaml*",
+              "RelativeToolTip": "DemoFebruar\\NewsPract.axaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-02-26T07:36:08.105Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "NewsPract.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\NewsPract.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\dimau\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\NewsPract.axaml.cs",
               "RelativeDocumentMoniker": "DemoFebruar\\NewsPract.axaml.cs",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\NewsPract.axaml.cs",
+              "ToolTip": "C:\\Users\\dimau\\Desktop\\Sessia\\DemoFebruary\\DemoFebruar\\NewsPract.axaml.cs",
               "RelativeToolTip": "DemoFebruar\\NewsPract.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAYwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T07:36:07.917Z",
               "EditorCaption": ""
