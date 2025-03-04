@@ -16,6 +16,7 @@ public partial class NewsPract : Window
 {
     List<Employee> employees = new List<Employee>();
     List<News_Jsons.Class1> newsItems = new List<News_Jsons.Class1>();
+    List<EventsCalendar> eventsCalendars = new List<EventsCalendar>();  
 
     public NewsPract()
     {
@@ -29,6 +30,7 @@ public partial class NewsPract : Window
     public void Loang()
     {
         employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation).ToList();
+        eventsCalendars = Helper.Base.EventsCalendars.Include(g => g.ResponsiblePerson).ToList();
 
         // Загружаем данные из JSON
         var baseDirectory = AppContext.BaseDirectory;
@@ -37,14 +39,12 @@ public partial class NewsPract : Window
         // Преобразуем данные JSON в список Class1
         newsItems = JsonConvert.DeserializeObject<List<News_Jsons.Class1>>(json);
 
-
-
-
-
         // Загрузка сотрудников
         Listbox_Employee.ItemsSource = employees;
         // Загрузка новостей
         Listbox_News.ItemsSource = newsItems;
+        //Загрузка событий
+        ListBox_Sob.ItemsSource = eventsCalendars;
     }
 
 

@@ -8,9 +8,11 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\calendar.png" />
     <None Remove="Assets\discet.png.png" />
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaResource Include="Assets\calendar.png" />
     <AvaloniaResource Include="Assets\discet.png.png" />
   </ItemGroup>
 

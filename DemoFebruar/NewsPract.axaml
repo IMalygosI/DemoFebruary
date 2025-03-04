@@ -162,15 +162,16 @@
 								   FontSize="21"
 								   Margin="0 10 0 10"/>
 
-						<Calendar HorizontalAlignment="Left"
-								  VerticalAlignment="Top"
+						<Border Height="335"
+								Width="445">
+						
+						<Calendar HorizontalAlignment="Center"
+								  VerticalAlignment="Center"
 								  Background="#78b24b">
-
-
 						</Calendar>
+						</Border>
+
 					</StackPanel>
-
-
 
 
 					<StackPanel Grid.Column="0"
@@ -182,26 +183,63 @@
 								   FontSize="21"
 								   Margin="0 10 0 10"/>
 
-						<ListBox BorderThickness="2"
+						<ListBox BorderThickness="0"
 								 Height="220"
+								 Name="ListBox_Sob"
 								 Background="White"
-								 Margin="0 0 10 0">
+								 Margin="-10 0 0 0">
 							<ListBox.ItemTemplate>
 								<DataTemplate>
-									<Border>
-										<Grid>
-											<TextBlock Text=""/>
+									<Border BorderThickness="0"
+											BorderBrush="Black"
+											Background="#78b24b">
+										<Grid ShowGridLines="True"
+											  ColumnDefinitions="*"
+											  RowDefinitions="140">
+
+											<StackPanel Margin="10">
+
+												<TextBlock Text="{Binding Name}"
+														   FontSize="17"
+														   FontWeight="Bold"
+														   Foreground="White"/>
+
+												<TextBlock Text="{Binding EventType}"
+														   HorizontalAlignment="Left"
+														   VerticalAlignment="Center"
+														   Margin="0 10 0 0"
+														   Foreground="White"/>
+
+												<DockPanel Margin="0 40 0 0"
+														   VerticalAlignment="Bottom">
+
+													<Image Source="/Assets/calendar.png"
+														   HorizontalAlignment="Left"
+														   VerticalAlignment="Bottom"
+														   Height="35"
+														   Width="35"/>
+													
+													<TextBlock Text="{Binding EventData}"
+															   HorizontalAlignment="Left"
+															   VerticalAlignment="Center"
+															   Margin="10 0 0 0"
+															   Foreground="White"/>
+
+													<TextBlock Text="{Binding ResponsiblePerson.Fio}"
+															   Margin="0 0 10 0"
+															   HorizontalAlignment="Right"
+															   VerticalAlignment="Center"
+															   Foreground="White"/>
+												
+												</DockPanel>
+
+											</StackPanel>
 										</Grid>
 									</Border>
 								</DataTemplate>
 							</ListBox.ItemTemplate>
 						</ListBox>
-
 					</StackPanel>
-
-
-
-
 
 					<StackPanel Grid.Column="1"
 								Grid.RowSpan="3"

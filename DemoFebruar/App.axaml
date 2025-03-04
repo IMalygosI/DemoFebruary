@@ -18,6 +18,10 @@
 			<Setter Property="Width" Value="1900"/>
 			<Setter Property="Height" Value="990"/>
 
+			<Setter Property="Background" Value="White"/>
+			
+			<Setter Property="Foreground" Value="Black"/>
+		
 		</Style>
 
 		<Style Selector="Button.Occent_Button">
