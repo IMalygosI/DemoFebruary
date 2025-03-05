@@ -104,11 +104,17 @@
 														   FontSize="16"
 														   FontWeight="Bold"/>
 
+												<ScrollViewer VerticalScrollBarVisibility="Auto"
+															  Margin="10 3 0 0"
+															  MaxHeight="30"
+															  HorizontalScrollBarVisibility="Disabled">
+
 												<TextBlock Text="{Binding JobTitleNavigation.Name}"
 														   TextWrapping="Wrap"
-														   Margin="10 3 0 0"
 														   Foreground="White"
 														   FontSize="13"/>
+													
+												</ScrollViewer>
 
 												<TextBlock Text="{Binding CorporateEmail}"
 														   TextWrapping="Wrap"
