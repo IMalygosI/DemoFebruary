@@ -8,12 +8,6 @@ namespace DemoFebruar
 {
     internal class News_Jsons
     {
-        /*
-        public class Rootobject
-        {
-            public Class1[] Property1 { get; set; }
-        }*/
-
         public class Class1
         {
             public int id { get; set; }
