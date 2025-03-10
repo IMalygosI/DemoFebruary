@@ -2,38 +2,46 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-		MaxHeight="450" MinHeight="450"
-		MaxWidth="800" MinWidth="800"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="250"
+		MaxHeight="250" MinHeight="250"
+		MaxWidth="600" MinWidth="600"
 		x:CompileBindings="False"
         x:Class="DemoFebruar.Error"
-        Title="Ошибка!">
+        Title="Ошибка">
 
-	<Grid ShowGridLines="True"
-		  ColumnDefinitions="*,*,*"
-		  RowDefinitions="*,*,*">
+	<Border BorderBrush="Red"
+			BorderThickness="2">
 
-		<StackPanel Grid.ColumnSpan="3"
-					HorizontalAlignment="Center"
-					VerticalAlignment="Center"
-					Grid.Row="1">
+		<Grid ShowGridLines="False"
+			  ColumnDefinitions="*,*,*"
+			  RowDefinitions="*,*,*">
 
-			<TextBlock Text=""
-					   FontWeight="Bold"
-					   Name="ErrorsWarning"/>
+			<StackPanel Grid.ColumnSpan="3"
+						Grid.RowSpan="3"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center">
 
-			<Button Background="Red"
-					Click="Button_Click"
-					Margin="0 100 0 0">
-				<TextBlock Text="Закрыть"
-						   Foreground="White"
-						   HorizontalAlignment="Center"
-						   VerticalAlignment="Center"/>
-			</Button>
+				<TextBlock Text=""
+						   FontWeight="Bold"
+						   TextWrapping="Wrap"
+						   Margin="10"
+						   Name="ErrorsWarning"/>
 
-		</StackPanel>
+				<Button Background="Red"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Bottom"
+						Click="Button_Click"
+						Margin="0 100 0 0">
+					<TextBlock Text="Закрыть"
+							   Foreground="White"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+				</Button>
 
+			</StackPanel>
 
-	</Grid>
+		</Grid>
+
+	</Border>
 
 </Window>

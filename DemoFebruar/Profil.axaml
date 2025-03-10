@@ -7,7 +7,7 @@
 		MaxHeight="990" MinHeight="990"
 		x:CompileBindings="False"
         x:Class="DemoFebruar.Profil"
-        Title="Profil">
+        Title="Профиль">
 	<Grid Background="Silver"
 		  Name="prof"
 		  ShowGridLines="False"

@@ -43,11 +43,10 @@ public partial class Error : Window
         {
             ErrorsWarning.Text = Warning;
         }
-
     }
 
     /// <summary>
-    /// Выход
+    /// Закрытие окна с ошибками
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

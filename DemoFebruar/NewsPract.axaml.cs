@@ -20,12 +20,7 @@ public partial class NewsPract : Window
     List<Employee> employees = new List<Employee>();
     List<News_Jsons.Class1> newsItems = new List<News_Jsons.Class1>();
     List<EventsCalendar> eventsCalendars = new List<EventsCalendar>();
-
-    List<DateOnly> listDate = new List<DateOnly>()
-    {
-       // new DateOnly(Helper.Base.Employees.Select(p => p.BrightDay)),
-
-    };
+    List<DateOnly> listDate = new List<DateOnly>();
 
     public NewsPract()
     {
@@ -45,6 +40,10 @@ public partial class NewsPract : Window
     {
         BrushesCalendar();
     }
+
+    /// <summary>
+    /// Выделяем дни событий в календаре
+    /// </summary>
     private void BrushesCalendar()
     {
         foreach (var child in CalendarCustomer.GetVisualDescendants())
@@ -85,26 +84,30 @@ public partial class NewsPract : Window
     /// </summary>
     public void Loang()
     {
+        // Загрузка данных
         employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation).ToList();
         eventsCalendars = Helper.Base.EventsCalendars.Include(g => g.ResponsiblePerson).ToList();
+        
+        // Загрузка дат для календаря
+        listDate = Helper.Base.EventsCalendars.Select(j => j.EventData).ToList();
 
         // Загружаем данные из JSON
         var baseDirectory = AppContext.BaseDirectory;
         var jsonPath = Path.Combine(baseDirectory, "News", "news_response.json");
         var json = File.ReadAllText(jsonPath);
+        
         // Преобразуем данные JSON в список Class1
         newsItems = JsonConvert.DeserializeObject<List<News_Jsons.Class1>>(json);
-
 
         // Собираем вводимое значение
         var Search_Text = (SearchText.Text ?? "").ToLower().Split(' ');
 
+        // Поиск по пользователям
         employees = employees.Where(a => Search_Text.Any(news => a.Fio.Contains(news))).ToList();
-
+        // Поиск по событиям
         eventsCalendars = eventsCalendars.Where(b => Search_Text.Any(news => b.Name.Contains(news))).ToList();
-
+        // Поиск по новостям
         newsItems = newsItems.Where(g => Search_Text.Any(news => g.title.Contains(news))).ToList();
-
 
         // Загрузка сотрудников
         Listbox_Employee.ItemsSource = employees;
@@ -114,8 +117,18 @@ public partial class NewsPract : Window
         ListBox_Sob.ItemsSource = eventsCalendars;
     }
 
-
+    /// <summary>
+    /// Проверка на ввод с клавиатуры
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void TextBox_TextChanged(object? sender, Avalonia.Controls.TextChangedEventArgs e) => Loang();
+
+    /// <summary>
+    /// выход к окну выбора
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void Button_Click_Out(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         Navigation navigation = new Navigation();

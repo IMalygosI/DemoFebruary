@@ -375,6 +375,11 @@ namespace DemoFebruar
             Close();
         }
 
+        /// <summary>
+        /// Выход к окну навигации
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_Out(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             Navigation navigation = new Navigation();

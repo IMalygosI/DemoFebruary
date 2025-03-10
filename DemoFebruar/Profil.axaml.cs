@@ -12,7 +12,6 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace DemoFebruar;
 
-
 public partial class Profil : Window
 {
     Employee employee1;
@@ -35,6 +34,7 @@ public partial class Profil : Window
 
         Loang_ComboBox();
     }
+
     /// <summary>
     /// Открытие профиля с возможность редактирования
     /// </summary>
