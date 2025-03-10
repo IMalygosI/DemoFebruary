@@ -203,6 +203,23 @@ public partial class DimaBaseContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("employees_job_title_fk");
 
+            entity.HasMany(d => d.DataEvents).WithMany(p => p.DataBirths)
+                .UsingEntity<Dictionary<string, object>>(
+                    "DateCalendar",
+                    r => r.HasOne<EventsCalendar>().WithMany()
+                        .HasForeignKey("DataEvent")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("datecalendar_events_calendar_fk"),
+                    l => l.HasOne<Employee>().WithMany()
+                        .HasForeignKey("DataBirth")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("datecalendar_employees_fk"),
+                    j =>
+                    {
+                        j.HasKey("DataBirth", "DataEvent").HasName("datecalendar_pk");
+                        j.ToTable("DateCalendar", "public_31-01-2025");
+                    });
+
             entity.HasMany(d => d.IdOtdels).WithMany(p => p.IdEmployes)
                 .UsingEntity<Dictionary<string, object>>(
                     "StructuralSeparation",

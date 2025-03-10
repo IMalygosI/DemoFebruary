@@ -22,4 +22,6 @@ public partial class EventsCalendar
     public virtual ICollection<MaterialAssociation> MaterialAssociations { get; set; } = new List<MaterialAssociation>();
 
     public virtual Employee ResponsiblePerson { get; set; } = null!;
+
+    public virtual ICollection<Employee> DataBirths { get; set; } = new List<Employee>();
 }

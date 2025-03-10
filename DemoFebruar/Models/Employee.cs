@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DemoFebruar.Models;
 
@@ -27,6 +26,9 @@ public partial class Employee
     public string? Info { get; set; }
 
     public DateOnly BrightDay { get; set; }
+
+
+
 
     public string GetDay => $"{BrightDay.Day} {GetMonth()}"; // День рождения
 
@@ -76,6 +78,9 @@ public partial class Employee
         return month;
     }
 
+
+
+
     public virtual ICollection<AbsenceCalendar> AbsenceCalendars { get; set; } = new List<AbsenceCalendar>();
 
     public virtual ICollection<AssistantId> AssistantIds { get; set; } = new List<AssistantId>();
@@ -94,13 +99,7 @@ public partial class Employee
 
     public virtual ICollection<TraningAttendance> TraningAttendances { get; set; } = new List<TraningAttendance>();
 
-    public virtual ICollection<Division> IdOtdels { get; set; } = new List<Division>();
+    public virtual ICollection<EventsCalendar> DataEvents { get; set; } = new List<EventsCalendar>();
 
-    public string Dannue
-    {
-        get
-        {
-            return IdOtdels.FirstOrDefault()!.Name!;
-        }
-    }
+    public virtual ICollection<Division> IdOtdels { get; set; } = new List<Division>();
 }

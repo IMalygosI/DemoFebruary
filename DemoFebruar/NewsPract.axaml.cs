@@ -20,7 +20,9 @@ public partial class NewsPract : Window
     List<Employee> employees = new List<Employee>();
     List<News_Jsons.Class1> newsItems = new List<News_Jsons.Class1>();
     List<EventsCalendar> eventsCalendars = new List<EventsCalendar>();
-    List<DateOnly> listDate = new List<DateOnly>();
+
+    List<DateOnly> listEventData = new List<DateOnly>();
+    List<DateOnly> listDateBrightDay = new List<DateOnly>();
 
     public NewsPract()
     {
@@ -52,14 +54,42 @@ public partial class NewsPract : Window
             {
                 var dateNow = (CalendarCustomer as Calendar).DisplayDate;
 
-                string vv = dayButton.Content!.ToString()!;
+                string vivod = dayButton.Content!.ToString()!;
+
+                //Ивенты no dr
+                //var listEventDataVar = new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod));
+                //Др
+                //var listDateBrightDayVar = new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod));
 
                 try
                 {
-                    if (listDate.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vv))))
+                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && 
+                        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))))
                     {
                         dayButton.Background = Brushes.LightYellow;
                         dayButton.Foreground = Brushes.Red;
+                    }
+                    else
+                    {
+                        dayButton.Background = Brushes.LightGray;
+                        dayButton.Foreground = Brushes.Black;
+                    }
+                    //-
+                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) &&  CalendarCustomer.SelectedDates.Count >= 5)
+                    {
+                        dayButton.Background = Brushes.Red;
+                        dayButton.Foreground = Brushes.Black;
+                    }
+                    else
+                    {
+                        dayButton.Background = Brushes.LightGray;
+                        dayButton.Foreground = Brushes.Black;
+                    }
+                    //-
+                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count < 2)
+                    {
+                        dayButton.Background = Brushes.Green;
+                        dayButton.Foreground = Brushes.Black;
                     }
                     else
                     {
@@ -76,9 +106,6 @@ public partial class NewsPract : Window
         }
     }
 
-
-
-
     /// <summary>
     /// Загрузка данных
     /// </summary>
@@ -87,9 +114,13 @@ public partial class NewsPract : Window
         // Загрузка данных
         employees = Helper.Base.Employees.Include(a => a.JobTitleNavigation).ToList();
         eventsCalendars = Helper.Base.EventsCalendars.Include(g => g.ResponsiblePerson).ToList();
-        
-        // Загрузка дат для календаря
-        listDate = Helper.Base.EventsCalendars.Select(j => j.EventData).ToList();
+
+        // Загрузка дат для календаря по Ивентам
+        listEventData = Helper.Base.EventsCalendars.Select(j => j.EventData).ToList();
+        // Загрузка дат для календаря по ДР
+        listDateBrightDay = Helper.Base.Employees.Select(j => j.BrightDay).ToList();
+
+        // listDate = Helper.Base.
 
         // Загружаем данные из JSON
         var baseDirectory = AppContext.BaseDirectory;

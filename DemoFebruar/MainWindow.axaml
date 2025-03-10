@@ -49,7 +49,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="UpravlenFinansamiDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -111,7 +111,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="UpravObespDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -205,7 +205,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="KaznaDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -392,7 +392,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="AnaliticDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -486,7 +486,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="WorkPromDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -549,7 +549,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="WorkPersonalDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -612,7 +612,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="CorrporatDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -675,7 +675,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="MarcetingDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -949,7 +949,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="CommunicatorDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -1224,7 +1224,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="ApparatUpravlenDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -1287,7 +1287,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="AcademicDorogiDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
@@ -1442,7 +1442,7 @@
 					Grid.Row="1"
 					IsVisible="False"
 					Name="AdministrativeDepartament"
-					Margin="25 40 5 90"
+					Margin="25 40 5 30"
 					Background="Silver">
 
 				<StackPanel VerticalAlignment="Top"
