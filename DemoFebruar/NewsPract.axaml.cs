@@ -21,6 +21,7 @@ public partial class NewsPract : Window
     List<News_Jsons.Class1> newsItems = new List<News_Jsons.Class1>();
     List<EventsCalendar> eventsCalendars = new List<EventsCalendar>();
 
+    // Даты Ивентов
     List<DateOnly> listEventData = new List<DateOnly>();
     List<DateOnly> listDateBrightDay = new List<DateOnly>();
 
@@ -56,14 +57,9 @@ public partial class NewsPract : Window
 
                 string vivod = dayButton.Content!.ToString()!;
 
-                //Ивенты no dr
-                //var listEventDataVar = new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod));
-                //Др
-                //var listDateBrightDayVar = new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod));
-
                 try
                 {
-                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && 
+                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod)))     || 
                         listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))))
                     {
                         dayButton.Background = Brushes.LightYellow;
@@ -74,8 +70,8 @@ public partial class NewsPract : Window
                         dayButton.Background = Brushes.LightGray;
                         dayButton.Foreground = Brushes.Black;
                     }
-                    //-
-                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) &&  CalendarCustomer.SelectedDates.Count >= 5)
+                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod)))     ||
+                        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count >= 5)
                     {
                         dayButton.Background = Brushes.Red;
                         dayButton.Foreground = Brushes.Black;
@@ -85,8 +81,8 @@ public partial class NewsPract : Window
                         dayButton.Background = Brushes.LightGray;
                         dayButton.Foreground = Brushes.Black;
                     }
-                    //-
-                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count < 2)
+                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod)))     ||
+                        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count < 2)
                     {
                         dayButton.Background = Brushes.Green;
                         dayButton.Foreground = Brushes.Black;

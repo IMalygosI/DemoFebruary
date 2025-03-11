@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\blockchain\\Desktop\\Dmitriy\\DemoFebruary\\",
+  "WorkspaceRootPath": "C:\\Users\\class_student\\Desktop\\\u0423\u0434\u0430\u043B\u044C\u0446\u043E\u0432\\DemoFebruary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\blockchain\\desktop\\dmitriy\\demofebruary\\demofebruar\\news_jsons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\class_student\\desktop\\\u0443\u0434\u0430\u043B\u044C\u0446\u043E\u0432\\demofebruary\\demofebruar\\newspract.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\newspract.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|c:\\users\\class_student\\desktop\\\u0443\u0434\u0430\u043B\u044C\u0446\u043E\u0432\\demofebruary\\demofebruar\\news_jsons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FC652EE-762A-4761-84C6-BA675E6EEEC7}|DemoFebruar\\DemoFebruar.csproj|solutionrelative:demofebruar\\news_jsons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,41 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "NewsPract.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\class_student\\Desktop\\\u0423\u0434\u0430\u043B\u044C\u0446\u043E\u0432\\DemoFebruary\\DemoFebruar\\NewsPract.axaml.cs",
+              "RelativeDocumentMoniker": "DemoFebruar\\NewsPract.axaml.cs",
+              "ToolTip": "C:\\Users\\class_student\\Desktop\\\u0423\u0434\u0430\u043B\u044C\u0446\u043E\u0432\\DemoFebruary\\DemoFebruar\\NewsPract.axaml.cs",
+              "RelativeToolTip": "DemoFebruar\\NewsPract.axaml.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAiwDMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T07:01:32.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "News_Jsons.cs",
-              "DocumentMoniker": "C:\\Users\\blockchain\\Desktop\\Dmitriy\\DemoFebruary\\DemoFebruar\\News_Jsons.cs",
+              "DocumentMoniker": "C:\\Users\\class_student\\Desktop\\\u0423\u0434\u0430\u043B\u044C\u0446\u043E\u0432\\DemoFebruary\\DemoFebruar\\News_Jsons.cs",
               "RelativeDocumentMoniker": "DemoFebruar\\News_Jsons.cs",
-              "ToolTip": "C:\\Users\\blockchain\\Desktop\\Dmitriy\\DemoFebruary\\DemoFebruar\\News_Jsons.cs",
+              "ToolTip": "C:\\Users\\class_student\\Desktop\\\u0423\u0434\u0430\u043B\u044C\u0446\u043E\u0432\\DemoFebruary\\DemoFebruar\\News_Jsons.cs",
               "RelativeToolTip": "DemoFebruar\\News_Jsons.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T14:13:32.561Z",
               "EditorCaption": ""
