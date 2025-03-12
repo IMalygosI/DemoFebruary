@@ -60,8 +60,7 @@ public partial class NewsPract : Window
                 {
                     var currentDate = new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod));
 
-                    if (listEventData.Contains(currentDate) ||
-                        listDateBrightDay.Contains(currentDate))
+                    if (listEventData.Contains(currentDate) || listDateBrightDay.Contains(currentDate))
                     {
                         if (CalendarCustomer.SelectedDates.Count >= 5)
                         {
@@ -81,14 +80,12 @@ public partial class NewsPract : Window
                         }
                         else
                         {
-                            // по умолчанию
                             dayButton.Background = Brushes.LightGray;
                             dayButton.Foreground = Brushes.Black;
                         }
                     }
                     else
                     {
-                        // по умолчанию
                         dayButton.Background = Brushes.LightGray;
                         dayButton.Foreground = Brushes.Black;
                     }
@@ -98,54 +95,6 @@ public partial class NewsPract : Window
                     dayButton.Background = Brushes.LightGray;
                     dayButton.Foreground = Brushes.Black;
                 }
-
-
-
-
-                //try
-                //{
-                //    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) ||
-                //        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count >= 5)
-                //    {
-                //        dayButton.Background = Brushes.Red;
-                //        dayButton.Foreground = Brushes.Black;
-                //    }
-                //    else
-                //    {
-                //        dayButton.Background = Brushes.LightGray;
-                //        dayButton.Foreground = Brushes.Black;
-                //    }
-                //    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) ||
-                //        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count < 2)
-                //    {
-                //        dayButton.Background = Brushes.Green;
-                //        dayButton.Foreground = Brushes.Black;
-                //    }
-
-                //    else
-                //    {
-                //        dayButton.Background = Brushes.LightGray;
-                //        dayButton.Foreground = Brushes.Black;
-                //    }
-                //    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) ||
-                //        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && 
-                //        CalendarCustomer.SelectedDates.Count >= 2 &&
-                //        CalendarCustomer.SelectedDates.Count < 5)
-                //    {
-                //        dayButton.Background = Brushes.LightYellow;
-                //        dayButton.Foreground = Brushes.Red;
-                //    }
-                //    else
-                //    {
-                //        dayButton.Background = Brushes.LightGray;
-                //        dayButton.Foreground = Brushes.Black;
-                //    }
-                //}
-                //catch
-                //{
-                //    dayButton.Background = Brushes.LightGray;
-                //    dayButton.Foreground = Brushes.Black;
-                //}
             }
         }
     }
