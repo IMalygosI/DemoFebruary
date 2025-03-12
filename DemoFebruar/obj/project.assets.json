@@ -4320,19 +4320,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\class_student\\.nuget\\packages\\": {}
+    "C:\\Users\\prdb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\class_student\\Desktop\\Удальцов\\DemoFebruary\\DemoFebruar\\DemoFebruar.csproj",
+      "projectUniqueName": "C:\\Users\\prdb\\Desktop\\Дмитрий\\DemoFebruary\\DemoFebruar\\DemoFebruar.csproj",
       "projectName": "DemoFebruar",
-      "projectPath": "C:\\Users\\class_student\\Desktop\\Удальцов\\DemoFebruary\\DemoFebruar\\DemoFebruar.csproj",
-      "packagesPath": "C:\\Users\\class_student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\class_student\\Desktop\\Удальцов\\DemoFebruary\\DemoFebruar\\obj\\",
+      "projectPath": "C:\\Users\\prdb\\Desktop\\Дмитрий\\DemoFebruary\\DemoFebruar\\DemoFebruar.csproj",
+      "packagesPath": "C:\\Users\\prdb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\prdb\\Desktop\\Дмитрий\\DemoFebruary\\DemoFebruar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\class_student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\prdb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4414,7 +4414,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

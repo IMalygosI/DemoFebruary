@@ -54,41 +54,41 @@ public partial class NewsPract : Window
             if (child is CalendarDayButton dayButton)
             {
                 var dateNow = (CalendarCustomer as Calendar).DisplayDate;
-
                 string vivod = dayButton.Content!.ToString()!;
 
                 try
                 {
-                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod)))     || 
-                        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))))
+                    var currentDate = new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod));
+
+                    if (listEventData.Contains(currentDate) ||
+                        listDateBrightDay.Contains(currentDate))
                     {
-                        dayButton.Background = Brushes.LightYellow;
-                        dayButton.Foreground = Brushes.Red;
+                        if (CalendarCustomer.SelectedDates.Count >= 5)
+                        {
+                            dayButton.Background = Brushes.Red;
+                            dayButton.Foreground = Brushes.Black;
+                        }
+                        else if (CalendarCustomer.SelectedDates.Count < 2)
+                        {
+                            dayButton.Background = Brushes.Green;
+                            dayButton.Foreground = Brushes.Black;
+                        }
+                        else if (CalendarCustomer.SelectedDates.Count >= 2 &&
+                                 CalendarCustomer.SelectedDates.Count < 5)
+                        {
+                            dayButton.Background = Brushes.LightYellow;
+                            dayButton.Foreground = Brushes.Red;
+                        }
+                        else
+                        {
+                            // по умолчанию
+                            dayButton.Background = Brushes.LightGray;
+                            dayButton.Foreground = Brushes.Black;
+                        }
                     }
                     else
                     {
-                        dayButton.Background = Brushes.LightGray;
-                        dayButton.Foreground = Brushes.Black;
-                    }
-                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod)))     ||
-                        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count >= 5)
-                    {
-                        dayButton.Background = Brushes.Red;
-                        dayButton.Foreground = Brushes.Black;
-                    }
-                    else
-                    {
-                        dayButton.Background = Brushes.LightGray;
-                        dayButton.Foreground = Brushes.Black;
-                    }
-                    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod)))     ||
-                        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count < 2)
-                    {
-                        dayButton.Background = Brushes.Green;
-                        dayButton.Foreground = Brushes.Black;
-                    }
-                    else
-                    {
+                        // по умолчанию
                         dayButton.Background = Brushes.LightGray;
                         dayButton.Foreground = Brushes.Black;
                     }
@@ -98,6 +98,54 @@ public partial class NewsPract : Window
                     dayButton.Background = Brushes.LightGray;
                     dayButton.Foreground = Brushes.Black;
                 }
+
+
+
+
+                //try
+                //{
+                //    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) ||
+                //        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count >= 5)
+                //    {
+                //        dayButton.Background = Brushes.Red;
+                //        dayButton.Foreground = Brushes.Black;
+                //    }
+                //    else
+                //    {
+                //        dayButton.Background = Brushes.LightGray;
+                //        dayButton.Foreground = Brushes.Black;
+                //    }
+                //    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) ||
+                //        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && CalendarCustomer.SelectedDates.Count < 2)
+                //    {
+                //        dayButton.Background = Brushes.Green;
+                //        dayButton.Foreground = Brushes.Black;
+                //    }
+
+                //    else
+                //    {
+                //        dayButton.Background = Brushes.LightGray;
+                //        dayButton.Foreground = Brushes.Black;
+                //    }
+                //    if (listEventData.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) ||
+                //        listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))) && 
+                //        CalendarCustomer.SelectedDates.Count >= 2 &&
+                //        CalendarCustomer.SelectedDates.Count < 5)
+                //    {
+                //        dayButton.Background = Brushes.LightYellow;
+                //        dayButton.Foreground = Brushes.Red;
+                //    }
+                //    else
+                //    {
+                //        dayButton.Background = Brushes.LightGray;
+                //        dayButton.Foreground = Brushes.Black;
+                //    }
+                //}
+                //catch
+                //{
+                //    dayButton.Background = Brushes.LightGray;
+                //    dayButton.Foreground = Brushes.Black;
+                //}
             }
         }
     }
@@ -130,11 +178,20 @@ public partial class NewsPract : Window
         var Search_Text = (SearchText.Text ?? "").ToLower().Split(' ');
 
         // Поиск по пользователям
-        employees = employees.Where(a => Search_Text.Any(news => a.Fio.Contains(news))).ToList();
+        employees = employees.Where(a => Search_Text.Any(news => a.Fio.ToLower().Contains(news.ToLower()) || 
+                                                                 a.WorkPhone.ToLower().Contains(news.ToLower()) ||
+                                                                 a.CorporateEmail.ToLower().Contains(news.ToLower()) ||
+                                                                 a.JobTitleNavigation.Name.ToLower().Contains(news.ToLower())
+                                                                 )).ToList();
         // Поиск по событиям
-        eventsCalendars = eventsCalendars.Where(b => Search_Text.Any(news => b.Name.Contains(news))).ToList();
+        eventsCalendars = eventsCalendars.Where(b => Search_Text.Any(news => b.Name.ToLower().Contains(news.ToLower()) ||
+                                                                             b.EventType.ToLower().Contains(news.ToLower()) ||
+                                                                             b.ResponsiblePerson.Fio.ToLower().Contains(news.ToLower())
+                                                                             )).ToList();
         // Поиск по новостям
-        newsItems = newsItems.Where(g => Search_Text.Any(news => g.title.Contains(news))).ToList();
+        newsItems = newsItems.Where(g => Search_Text.Any(news => g.title.ToLower().Contains(news.ToLower()) || 
+                                                                 g.description.ToLower().Contains(news.ToLower())
+                                                                 )).ToList();
 
         // Загрузка сотрудников
         Listbox_Employee.ItemsSource = employees;
