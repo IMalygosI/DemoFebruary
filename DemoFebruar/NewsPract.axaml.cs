@@ -8,6 +8,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using Avalonia.VisualTree;
 using DemoFebruar.Models;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,16 @@ public partial class NewsPract : Window
     // Даты Ивентов
     List<DateOnly> listEventData = new List<DateOnly>();
     List<DateOnly> listDateBrightDay = new List<DateOnly>();
+
+    /// <summary>
+    /// Добавление торта
+    /// </summary>
+    public Image image = new Image()
+    {
+        Source = new Bitmap($@"Assets\\cake.png"),
+        Width = 40,
+        Height = 40,
+    };
 
     public NewsPract()
     {
@@ -58,25 +69,45 @@ public partial class NewsPract : Window
 
                 try
                 {
+                    // Добавляем торт на Дату
+                    if (listDateBrightDay.Contains(new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod))))
+                    {
+                        dayButton.Background = Brushes.White;
+                        dayButton.Content = new Image()
+                        {
+                            Source = new Bitmap($@"Assets\\cake.png"),
+                            Width = 40,
+                            Height = 43,
+                        };
+                    }
+                    else
+                    {
+                        dayButton.Background = Brushes.White;
+                        dayButton.Foreground = Brushes.Black;
+                    }
+
                     var currentDate = new DateOnly(dateNow.Year, dateNow.Month, int.Parse(vivod));
 
                     if (listEventData.Contains(currentDate) || listDateBrightDay.Contains(currentDate))
                     {
-                        if (CalendarCustomer.SelectedDates.Count >= 5)
+                        var countBirthday = listDateBrightDay.Count(x=>x ==  currentDate);
+                        var countEventData = listEventData.Count(x=>x == currentDate);
+
+                        if (countBirthday >= 5 || countEventData >= 5)
                         {
                             dayButton.Background = Brushes.Red;
                             dayButton.Foreground = Brushes.Black;
                         }
-                        else if (CalendarCustomer.SelectedDates.Count < 2)
-                        {
-                            dayButton.Background = Brushes.Green;
-                            dayButton.Foreground = Brushes.Black;
-                        }
-                        else if (CalendarCustomer.SelectedDates.Count >= 2 &&
-                                 CalendarCustomer.SelectedDates.Count < 5)
+                        else if ((countBirthday >= 2 && countBirthday < 5) ||
+                                 (countEventData >= 2 && countEventData < 5))
                         {
                             dayButton.Background = Brushes.LightYellow;
                             dayButton.Foreground = Brushes.Red;
+                        }
+                        else if (countBirthday < 2 || countEventData < 2)
+                        {
+                            dayButton.Background = Brushes.Green;
+                            dayButton.Foreground = Brushes.Black;
                         }
                         else
                         {
